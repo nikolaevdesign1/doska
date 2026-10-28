@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ДОСКА — помогаем брендам решать дизайн-задачи</title>
+<meta name="description" content="ДОСКА — агентство: помогаем брендам решать дизайн-задачи. Сайты, презентации, приложения, брендинг.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Cormorant:ital,wght@1,500;1,600&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="head"><div class="wrap">
+  <a class="logo" href="/">ДОСКА</a>
+  <nav class="nav">
+    <a href="/#кейсы">кейсы</a><a href="/#возможности">возможности</a><a href="/#процесс">процесс</a><a href="/#тарифы-блок">тарифы</a><a href="/лента">лента</a>
+  </nav>
+  <a class="btn" href="/#заявка">заказать дизайн ↗</a>
+  <button class="btn burger" aria-label="Меню">меню</button>
+</div></header>
+
+<main>
+<div class="wrap">
+  <h1>помогаем брендам<br>решать <em>дизайн-задачи</em></h1>
+  <div class="clients" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <section id="кейсы" style="padding-top:0">
+    <div class="grid" id="лента"></div>
+    <div class="more"><span>Сделаем так же и ещё круче</span><span style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="/лента">вся лента →</a><a class="btn btn-accent" href="#заявка">заполнить бриф и узнать стоимость ↗</a></span></div>
+  </section>
+
+  <section id="возможности" class="services">
+    <h2>сайты, презентации,<br>приложения, брендинг<br><em>и многое другое..</em></h2>
+    <div class="cols">
+      <div>лендинги<br>интернет-магазины<br>мобильные приложения<br>корпоративные сайты<br>дизайн-системы<br>А/Б-тестирование</div>
+      <div>презентации<br>годовые отчёты<br>брошюры<br>шаблоны писем<br>руководства по стилю<br>рабочие тетради</div>
+      <div>брендинг<br>айдентика<br>нейминг<br>копирайтинг<br>ведение соцсетей<br>креатив</div>
+    </div>
+  </section>
+
+  <section id="процесс">
+    <h2>не изобретаем колесо.<br>работаем прозрачно<br><em>и без напрягов</em></h2>
+    <div class="feat">
+      <div class="f"><i>✦</i><div><b>сначала идея</b><p>после понимания задачи переходим к дизайну</p></div></div>
+      <div class="f"><i>✦</i><div><b>всегда открыты к диалогу</b><p>внимательно прислушиваемся к вашим комментариям и пожеланиям</p></div></div>
+      <div class="f"><i>✦</i><div><b>помним про дедлайн</b><p>высылаем готовый продукт заранее, оставляем время на правки</p></div></div>
+      <div class="f"><i>✦</i><div><b>работаем прозрачно</b><p>можем предоставить доступ к проектам</p></div></div>
+      <div class="f"><i>✦</i><div><b>всегда на связи</b><p>не пропадаем с радаров, никогда</p></div></div>
+      <div class="f"><i>✦</i><div><b>понимаем границы возможностей</b><p>берём столько проектов, сколько осилим, мы ценим качество</p></div></div>
+    </div>
+    <div class="types">
+      <div class="type"><div><span class="pill">не срочно</span><b>Большой проект</b><p>Поможем сформулировать ключевые тезисы и получить на выходе стильный продукт</p></div></div>
+      <div class="type"><div><span class="pill g">срочно</span><b>Срочный проект</b><p>Быстро соберём шаблонный вариант в корпоративных цветах за 24 часа</p></div><div class="badge">24</div></div>
+    </div>
+    <div class="steps" style="margin-top:14px">
+      <div class="step"><span>(01)</span>Разбираемся в задаче</div>
+      <div class="step"><span>(02)</span>Работаем с информацией</div>
+      <div class="step"><span>(03)</span>Выстраиваем логику</div>
+      <div class="step"><span>(04)</span>Оформляем проект</div>
+      <div class="step"><span>(05)</span>Отправляем нужные форматы</div>
+    </div>
+  </section>
+
+  <section id="тарифы-блок">
+    <h2>тарифы <em>и направления</em></h2>
+    <div class="tabs" id="вкладки" role="tablist"></div>
+    <div class="plans" id="тарифы"></div>
+  </section>
+</div>
+
+<section class="form" id="заявка"><div class="wrap">
+  <form id="форма">
+    <div class="row"><label>привет! меня зовут</label><input required placeholder="введите ваше имя"></div>
+    <div class="row"><label>хотелось бы заказать у вас</label>
+      <select id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
+    <div class="row"><label>планируем заложить на проект</label>
+      <select><option>до 100 000 ₽</option><option>100 000 – 300 000 ₽</option><option>300 000 – 700 000 ₽</option><option>более 700 000 ₽</option><option>пока не знаем</option></select></div>
+    <div class="row"><label>вкратце у нас следующая задача</label><textarea rows="2" placeholder="опишите, что необходимо сделать, на звонке всё обсудим подробнее"></textarea></div>
+    <div class="row"><label>ответ можно прислать сюда</label><input required placeholder="тут может быть ваша почта или телеграм / вотсап"></div>
+    <p class="small">Отправляя форму, вы даёте согласие с <a href="#">Политикой обработки персональных данных</a></p>
+    <div><button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость ↗</button></div>
+    <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+  </form>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div class="top">
+    <p class="lead">помогаем брендам решать дизайн-задачи</p>
+    <div class="fcols">
+      <div><h4>Меню</h4><ul><li><a href="/#кейсы">Кейсы</a></li><li><a href="/лента">Лента</a></li><li><a href="/#тарифы-блок">Тарифы</a></li><li><a href="/#заявка">Заявка</a></li></ul></div>
+      <div><h4>Связаться</h4><ul><li>привет@доска.рф</li><li>чат в телеграме</li><li>чат в вотсапе</li></ul></div>
+    </div>
+  </div>
+  <div class="big" aria-hidden="true">ДОСКА</div>
+</div>
+<div class="bottom wrap"><span>© ДОСКА, все права защищены</span><a href="#">прочитать договор и условия</a></div>
+</footer>
+<div class="cookie"><span>Мы используем файлы куки, чтобы улучшить работу сайта. Продолжая использовать этот сайт, вы соглашаетесь с использованием куки-файлов.</span><button class="btn">согласен(а)</button></div>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body></html>

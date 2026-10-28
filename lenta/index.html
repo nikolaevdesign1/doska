@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Лента — ДОСКА</title>
+<meta name="description" content="Материалы и проекты агентства ДОСКА.">
+<link rel="canonical" href="https://doska.agency/lenta">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ДОСКА">
+<meta property="og:title" content="Лента — ДОСКА">
+<meta property="og:description" content="Материалы и проекты агентства ДОСКА.">
+<meta property="og:url" content="https://doska.agency/lenta">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<header class="head"><div class="wrap">
+  <a class="logo" href="/">ДОСКА</a>
+  <nav class="nav">
+    <a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы</a>
+    <a href="/lenta">лента</a>
+    <a href="/kontakty">контакты</a>
+  </nav>
+  <button class="btn" type="button" data-order>заказать дизайн</button>
+  <button class="btn burger" type="button" aria-label="Меню">меню</button>
+</div></header>
+
+<main><div class="wrap">
+  <div class="page-title"><h1>лента <em>материалов</em></h1></div>
+  <div class="chips tabs" id="чипы"></div>
+  <div class="grid" id="лента" data-всё="1"></div>
+  <p style="margin:40px 0"><a class="btn" href="/">← на главную</a></p>
+</div></main>
+
+<footer class="foot"><div class="wrap">
+  <div class="top">
+    <p class="lead">помогаем брендам<br>решать дизайн-задачи</p>
+    <div class="fcols">
+      <div><h4>следите за нами</h4><ul class="arrows" id="подвал-соцсети"></ul></div>
+      <div><h4>меню</h4><ul>
+        <li><a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы</a></li>
+        <li><a href="/lenta">лента</a></li><li><a href="/kontakty">контакты</a></li><li><a href="/#заявка">заявка</a></li></ul></div>
+      <div><h4>связаться</h4><ul><li><a href="mailto:hello@doska.agency">hello@doska.agency</a></li><li>чат в телеграме</li><li>чат в вотсапе</li></ul></div>
+    </div>
+  </div>
+  <div class="big" aria-hidden="true">ДОСКА</div>
+  <div class="bottom"><span>© ДОСКА, все права защищены</span><a class="u" href="#">прочитать договор и условия</a></div>
+</div></footer>
+
+<div class="modal" id="окно" role="dialog" aria-modal="true" aria-labelledby="окно-заголовок" hidden>
+  <div class="modal-shade" data-close></div>
+  <div class="modal-box">
+    <div class="modal-art" aria-hidden="true"></div>
+    <form class="modal-form" id="форма-окна">
+      <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
+      <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом</h3>
+      <input name="имя" required placeholder="введите ваше имя" autocomplete="name">
+      <input name="связь" required placeholder="почта или телеграм">
+      <textarea name="задача" rows="2" placeholder="коротко опишите задачу"></textarea>
+      <label class="attach"><input type="file" name="файл"><span class="attach-t">прикрепить файл</span></label>
+      <div><button class="btn btn-accent" type="submit">отправить</button></div>
+      <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+    </form>
+  </div>
+</div>
+
+<div class="cookie"><p>Мы используем файлы куки, чтобы улучшить работу сайта. Продолжая использовать этот сайт, вы соглашаетесь с использованием куки-файлов.</p><button class="btn" type="button">согласен(а)</button></div>
+<script src="/data.js"></script>
+<script src="/script.js"></script>
+</body></html>

@@ -1,1 +1,6 @@
-{"cleanUrls":true}
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/lenta/:slug", "destination": "/post.html" }
+  ]
+}

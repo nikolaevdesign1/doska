@@ -5,20 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ДОСКА — помогаем брендам решать дизайн-задачи</title>
 <meta name="description" content="ДОСКА — агентство: помогаем брендам решать дизайн-задачи. Сайты, презентации, приложения, брендинг.">
+<link rel="canonical" href="https://doska.agency/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="ДОСКА">
+<meta property="og:title" content="ДОСКА — помогаем брендам решать дизайн-задачи">
+<meta property="og:description" content="ДОСКА — агентство: помогаем брендам решать дизайн-задачи. Сайты, презентации, приложения, брендинг.">
+<meta property="og:url" content="https://doska.agency/">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Cormorant:ital,wght@1,500;1,600&display=swap&subset=cyrillic" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="head"><div class="wrap">
   <a class="logo" href="/">ДОСКА</a>
   <nav class="nav">
-    <a href="/#кейсы">кейсы</a><a href="/#возможности">возможности</a><a href="/#процесс">процесс</a><a href="/#тарифы-блок">тарифы</a><a href="/лента">лента</a>
+    <a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы</a>
+    <a href="/lenta">лента</a>
+    <a href="/kontakty">контакты</a>
   </nav>
-  <a class="btn" href="/#заявка">заказать дизайн ↗</a>
-  <button class="btn burger" aria-label="Меню">меню</button>
+  <button class="btn" type="button" data-order>заказать дизайн</button>
+  <button class="btn burger" type="button" aria-label="Меню">меню</button>
 </div></header>
 
 <main>
@@ -28,7 +38,7 @@
 
   <section id="кейсы" style="padding-top:0">
     <div class="grid" id="лента"></div>
-    <div class="more"><span>Сделаем так же и ещё круче</span><span style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="/лента">вся лента →</a><a class="btn btn-accent" href="#заявка">заполнить бриф и узнать стоимость ↗</a></span></div>
+    <div class="more"><span>Сделаем так же и ещё круче</span><a class="btn" href="/lenta">вся лента</a></div>
   </section>
 
   <section id="возможности" class="services">
@@ -37,6 +47,20 @@
       <div>лендинги<br>интернет-магазины<br>мобильные приложения<br>корпоративные сайты<br>дизайн-системы<br>А/Б-тестирование</div>
       <div>презентации<br>годовые отчёты<br>брошюры<br>шаблоны писем<br>руководства по стилю<br>рабочие тетради</div>
       <div>брендинг<br>айдентика<br>нейминг<br>копирайтинг<br>ведение соцсетей<br>креатив</div>
+    </div>
+  </section>
+
+  <section id="ии" class="ai">
+    <h2>работаем через ИИ-интеграции<br><em>и собираем быстрее</em></h2>
+    <p class="lead2">Мы построили ИИ-систему, которая берёт на себя рутину: разбирает бриф, собирает черновики и подготавливает материалы. Дизайнеры тратят время на идею и качество, а вы получаете результат заметно быстрее.</p>
+    <div class="ai-grid">
+      <div class="video" role="img" aria-label="Место под видео о работе ИИ-системы"><span>видео о том, как работает система, появится здесь</span></div>
+      <ol class="ai-steps">
+        <li><b>Ставим задачу</b><p>Вы описываете задачу, а система помогает разобрать бриф и собрать нужную информацию.</p></li>
+        <li><b>Система собирает черновик</b><p>Подключённые ИИ-инструменты готовят варианты и материалы за часы, а не за дни.</p></li>
+        <li><b>Дизайнер доводит до результата</b><p>Человек отбирает лучшее, правит и отвечает за качество каждого макета.</p></li>
+        <li><b>Передаём готовое</b><p>Отправляем нужные форматы и оставляем время на правки.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -74,13 +98,13 @@
   <form id="форма">
     <div class="row"><label>привет! меня зовут</label><input required placeholder="введите ваше имя"></div>
     <div class="row"><label>хотелось бы заказать у вас</label>
-      <select id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
+      <select class="cs" id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
     <div class="row"><label>планируем заложить на проект</label>
-      <select><option>до 100 000 ₽</option><option>100 000 – 300 000 ₽</option><option>300 000 – 700 000 ₽</option><option>более 700 000 ₽</option><option>пока не знаем</option></select></div>
+      <select class="cs"><option>до 100 000 ₽</option><option>100 000 – 300 000 ₽</option><option>300 000 – 700 000 ₽</option><option>более 700 000 ₽</option><option>пока не знаем</option></select></div>
     <div class="row"><label>вкратце у нас следующая задача</label><textarea rows="2" placeholder="опишите, что необходимо сделать, на звонке всё обсудим подробнее"></textarea></div>
     <div class="row"><label>ответ можно прислать сюда</label><input required placeholder="тут может быть ваша почта или телеграм / вотсап"></div>
     <p class="small">Отправляя форму, вы даёте согласие с <a href="#">Политикой обработки персональных данных</a></p>
-    <div><button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость ↗</button></div>
+    <div><button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость</button></div>
     <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
   </form>
 </div></section>
@@ -88,17 +112,37 @@
 
 <footer class="foot"><div class="wrap">
   <div class="top">
-    <p class="lead">помогаем брендам решать дизайн-задачи</p>
+    <p class="lead">помогаем брендам<br>решать дизайн-задачи</p>
     <div class="fcols">
-      <div><h4>Меню</h4><ul><li><a href="/#кейсы">Кейсы</a></li><li><a href="/лента">Лента</a></li><li><a href="/#тарифы-блок">Тарифы</a></li><li><a href="/#заявка">Заявка</a></li></ul></div>
-      <div><h4>Связаться</h4><ul><li>привет@доска.рф</li><li>чат в телеграме</li><li>чат в вотсапе</li></ul></div>
+      <div><h4>следите за нами</h4><ul class="arrows" id="подвал-соцсети"></ul></div>
+      <div><h4>меню</h4><ul>
+        <li><a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы</a></li>
+        <li><a href="/lenta">лента</a></li><li><a href="/kontakty">контакты</a></li><li><a href="/#заявка">заявка</a></li></ul></div>
+      <div><h4>связаться</h4><ul><li><a href="mailto:hello@doska.agency">hello@doska.agency</a></li><li>чат в телеграме</li><li>чат в вотсапе</li></ul></div>
     </div>
   </div>
   <div class="big" aria-hidden="true">ДОСКА</div>
+  <div class="bottom"><span>© ДОСКА, все права защищены</span><a class="u" href="#">прочитать договор и условия</a></div>
+</div></footer>
+
+<div class="modal" id="окно" role="dialog" aria-modal="true" aria-labelledby="окно-заголовок" hidden>
+  <div class="modal-shade" data-close></div>
+  <div class="modal-box">
+    <div class="modal-art" aria-hidden="true"></div>
+    <form class="modal-form" id="форма-окна">
+      <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
+      <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом</h3>
+      <input name="имя" required placeholder="введите ваше имя" autocomplete="name">
+      <input name="связь" required placeholder="почта или телеграм">
+      <textarea name="задача" rows="2" placeholder="коротко опишите задачу"></textarea>
+      <label class="attach"><input type="file" name="файл"><span class="attach-t">прикрепить файл</span></label>
+      <div><button class="btn btn-accent" type="submit">отправить</button></div>
+      <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+    </form>
+  </div>
 </div>
-<div class="bottom wrap"><span>© ДОСКА, все права защищены</span><a href="#">прочитать договор и условия</a></div>
-</footer>
-<div class="cookie"><span>Мы используем файлы куки, чтобы улучшить работу сайта. Продолжая использовать этот сайт, вы соглашаетесь с использованием куки-файлов.</span><button class="btn">согласен(а)</button></div>
-<script src="data.js"></script>
-<script src="script.js"></script>
+
+<div class="cookie"><p>Мы используем файлы куки, чтобы улучшить работу сайта. Продолжая использовать этот сайт, вы соглашаетесь с использованием куки-файлов.</p><button class="btn" type="button">согласен(а)</button></div>
+<script src="/data.js"></script>
+<script src="/script.js"></script>
 </body></html>

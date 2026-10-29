@@ -57,7 +57,7 @@ FOOT='''
 <div class="modal" id="окно" role="dialog" aria-modal="true" aria-labelledby="окно-заголовок" hidden>
   <div class="modal-shade" data-close></div>
   <div class="modal-box">
-    <div class="modal-art" aria-hidden="true"></div>
+    <div class="modal-art" aria-hidden="true"><img src="/assets/popup.webp" alt="" width="1100" height="1600"></div>
     <form class="modal-form" id="форма-окна">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
       <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом <span class="emo" role="img" aria-label="знак мира" style="--r:8deg">✌️</span></h3>
@@ -111,7 +111,7 @@ INDEX='''
   <div class="hero dots">
   <h1>помогаем брендам<br>решать <em>дизайн-задачи</em></h1>
   <div class="hero-cta"><button class="btn btn-accent" type="button" data-order>оставить заявку</button></div>
-  <div class="clients"><img src="/assets/clients/klient-1.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-2.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-3.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-4.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-5.png" alt="Логотип клиента" loading="eager"></div>
+  <div class="clients"><img src="/assets/clients/klient-1.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-2.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-3.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-4.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-5.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-6.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-7.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-8.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-9.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-10.png" alt="Логотип клиента" loading="eager"></div>
   </div>
 
   <section id="кейсы" style="padding-top:0">

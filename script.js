@@ -20,6 +20,13 @@
     });
   }
 
+  /* ---------- шапка: белая подложка только при прокрутке ---------- */
+  const шапка=$('.head');
+  if(шапка){
+    const следить=()=>шапка.classList.toggle('scrolled',scrollY>8);
+    следить();addEventListener('scroll',следить,{passive:true});
+  }
+
   /* ---------- меню ---------- */
   const b=$('.burger'),n=$('.nav');
   if(b)b.addEventListener('click',()=>n.classList.toggle('open'));

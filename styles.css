@@ -50,10 +50,9 @@ em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--acce
 .btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
 .btn-accent:hover{background:#5f3fd8;border-color:#5f3fd8}
 .burger{display:none}
-.btn-lg{padding:15px 36px;font-size:16px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .btn-accent:focus-visible{outline-color:#5f3fd8}
-.hero-cta{display:flex;justify-content:center;margin-top:-20px;padding-bottom:40px}
+.hero-cta{display:flex;justify-content:center;margin-top:-20px}
 
 
 /* точечная сетка с еле заметной волной */
@@ -78,7 +77,7 @@ h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:clamp(36px,4.5vw,64px)}
 section{padding:clamp(72px,9vw,140px) 0}
 
 /* клиенты */
-.clients{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 64px;padding:20px 0 70px}
+.clients{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 64px;padding:56px 0 clamp(64px,7vw,100px)}
 .clients img{height:48px;width:auto;max-width:150px;object-fit:contain;opacity:.75;transition:opacity .3s,transform .35s var(--ease)}
 .clients img:hover{opacity:1;transform:scale(1.06)}
 

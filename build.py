@@ -47,7 +47,7 @@ FOOT='''
       <div><h4>меню</h4><ul>
         <li><a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы</a></li>
         <li><a href="/lenta">лента</a></li><li><a href="/kontakty">контакты</a></li><li><a href="/#заявка">заявка</a></li></ul></div>
-      <div><h4>связаться</h4><ul><li><a href="mailto:hello@doska.agency">hello@doska.agency</a></li><li>чат в телеграме</li></ul></div>
+      <div><h4>связаться</h4><ul><li><a href="mailto:hello@doska.agency">hello@doska.agency</a></li></ul></div>
     </div>
   </div>
   <div class="big" aria-hidden="true">ДОСКА</div>

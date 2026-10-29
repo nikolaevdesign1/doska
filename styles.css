@@ -358,3 +358,14 @@ select.cs{display:none}
 .week-i em{font-family:var(--f-serif);font-style:italic;color:var(--accent);font-size:1.5em;font-weight:400;margin-right:2px}
 .week-p{color:var(--mute);font-weight:600}
 @media(max-width:640px){.week{padding:18px 20px}}
+
+/* ---------- значки наград ---------- */
+.badges{position:absolute;right:20px;top:18px;display:flex;flex-direction:column;gap:6px;pointer-events:none}
+.badge{position:relative;width:84px;height:84px;display:block;transform:rotate(-6deg);filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
+.badge:nth-child(even){transform:rotate(5deg)}
+.badge svg{width:100%;height:100%;display:block}
+.badge path{fill:var(--bc)}.badge .hole{fill:#0b0b10}
+.badge .bt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;line-height:1.1;padding:0 12px}
+.badge small{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.badge b{font-size:13px;font-weight:800;margin:3px 0;text-transform:uppercase;letter-spacing:.02em}
+.badge.c-сер{--bc:#a3a3a8}.badge.c-бронза{--bc:#b8ad74}.badge.c-золото{--bc:#e0b43c}.badge.c-фиолет{--bc:#7b5cf0}

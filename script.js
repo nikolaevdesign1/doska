@@ -51,6 +51,18 @@
   }
 
   /* ---------- плитки ленты ---------- */
+  /* ---------- значки наград у кейсов ---------- */
+  function значок(н){
+    const n=12,R=44,a=3.2;let p='';
+    for(let k=0;k<=240;k++){
+      const t=k/240*Math.PI*2,r=R+a*Math.cos(n*t);
+      p+=(k?'L':'M')+(50+r*Math.cos(t)).toFixed(2)+' '+(50+r*Math.sin(t)).toFixed(2);
+    }
+    const b=document.createElement('span');
+    b.className='badge c-'+(н.цвет||'сер');
+    b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true"><path d="'+p+'Z"/><circle cx="19" cy="80" r="2.6" class="hole"/></svg><span class="bt"><small>'+(н.п||'')+'</small><b>'+н.т+'</b>'+(н.г?'<small>'+н.г+'</small>':'')+'</span>';
+    return b;
+  }
   const РАСКЛАДКА=[8,4,4,4,4,4,8];
   function размеры(n){
     const р=[];let строка=0;
@@ -75,6 +87,7 @@
     a.className='tile s'+ширина+(x.свет?' light':'');
     a.style.setProperty('--art',x.ф);
     a.innerHTML='<div class="tags"><span>'+x.тип+'</span><span>'+x.ист+'</span></div><h3>'+x.т+'<i class="go" aria-hidden="true"> ↗</i></h3>';
+    if(x.награды){const g=document.createElement('div');g.className='badges';x.награды.forEach(н=>g.appendChild(значок(н)));a.appendChild(g)}
     if(анимировать&&!тихо){a.classList.add('pop');a.style.setProperty('--d',Math.min(i,8)*.05+'s')}
     return a;
   }

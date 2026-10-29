@@ -1,9 +1,10 @@
+/* Награды у кейса: награды:[{п:'подпись сверху',т:'главное слово',г:'год',цвет:'сер'|'бронза'|'золото'|'фиолет'}] */
 /* Материалы ленты и соцсети. Чтобы добавить материал — допишите объект в список.
    с — адрес страницы (латиницей), т — заголовок, м — метки, ф — обложка (пока градиент),
    р — размер плитки в сетке, свет — светлая плитка. */
 window.ЛЕНТА = [
   {с:'maryjoy',тип:'кейсы',т:'maryjoy — дизайн платформы «белых» хакеров',ист:'под NDA',секрет:1,ф:'radial-gradient(120% 90% at 50% 100%,#6b2fe0,#1a0838 60%,#0b0418)'},
-  {с:'1',тип:'кейсы',т:"Chris Williams Art Gallery — сайт и награда на Behance",ист:'Behance',ссылка:'https://www.behance.net/oleg_nikolaev1',ф:'linear-gradient(135deg,#14121c,#4a3f8f)'},
+  {с:'1',тип:'кейсы',т:"Chris Williams Art Gallery — сайт и награда на Behance",ист:'Behance',ссылка:'https://www.behance.net/oleg_nikolaev1',ф:'linear-gradient(135deg,#14121c,#4a3f8f)',награды:[{п:'награда',т:'Behance',цвет:'сер'}]},
   {с:'2',тип:'кейсы',т:"LITT — интернет-магазин в Дубае",ист:'dprofile',ссылка:'https://dprofile.ru/case/191937/litt-ecommerce',ф:'linear-gradient(135deg,#0f3d3e,#2f8f83)'},
   {с:'3',тип:'кейсы',т:"Atelier #40 — система для модного журнала в ОАЭ",ист:'dprofile',ссылка:'https://dprofile.ru/nikolaev_design1',ф:'linear-gradient(135deg,#3a2f2a,#b98e6a)'},
   {с:'4',тип:'кейсы',т:"TUD — интернет-магазин",ист:'dprofile',ссылка:'https://dprofile.ru/nikolaev_design1',ф:'linear-gradient(135deg,#5a4af0,#7b5cf0)'},

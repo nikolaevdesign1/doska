@@ -164,6 +164,7 @@ section{padding:clamp(72px,9vw,140px) 0}
 .plan p{font-size:13px;color:var(--mute)}
 .plan ul{list-style:none;font-size:14px;display:grid;gap:8px;flex:1}
 .plan li{padding-left:22px;position:relative}
+.plan li.key{font-weight:700}
 .plan li::before{content:"✦";position:absolute;left:0;color:var(--accent);font-size:11px;top:3px}
 
 /* форма: на всю ширину */

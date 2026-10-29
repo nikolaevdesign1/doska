@@ -145,7 +145,7 @@
       пл.classList.toggle('one',спис.length===1);
       пл.innerHTML=спис.map((t,i)=>
         '<div class="plan'+(t[4]?' hit':'')+(анимировать&&!тихо?' pop':'')+'" style="--d:'+i*.08+'s"><h3>'+t[0]+(t[4]?'<small>'+(t[4]===1?'популярный':t[4])+'</small>':'')+'</h3>'+
-        '<div class="price">'+t[1]+'</div><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li>'+y+'</li>').join('')+'</ul>'+
+        '<div class="price">'+t[1]+'</div><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li'+(/согласован|утвержд/i.test(y)?' class="key"':'')+'>'+y+'</li>').join('')+'</ul>'+
         '<button type="button" class="btn '+(t[4]?'btn-accent':'')+'" data-к="'+к+'" data-н="'+t[0]+'">выбрать</button></div>').join('');
       $$('.plan .btn',пл).forEach(b=>b.addEventListener('click',()=>{
         const имя=b.dataset.к===b.dataset.н||b.dataset.к==='Техническая поддержка'?b.dataset.к:b.dataset.к+' · '+b.dataset.н;

@@ -101,7 +101,7 @@
     const цель=вид==='li'?document.createElement('a'):a;
     цель.href=s.с;цель.textContent=s.н;
     if(s.внешняя){цель.target='_blank';цель.rel='noopener'}
-    if(вид==='li'){a.appendChild(цель)}else{цель.innerHTML=s.н+'<span>'+(s.с==='#'?'скоро':'открыть')+'</span>'}
+    if(вид==='li'){a.appendChild(цель)}else{цель.innerHTML=s.н+'<span>'+(s.п||'')+'</span>'}
     return a;
   };
   if(соц)window.СОЦСЕТИ.forEach(s=>соц.appendChild(ссылка(s,'a')));

@@ -128,7 +128,7 @@ INDEX='''
       <div class="type"><div><span class="pill">не срочно</span><b>Большой проект</b><p>Поможем сформулировать ключевые тезисы и получить на выходе стильный продукт</p></div></div>
       <div class="type"><div><span class="pill g">срочно</span><b>Срочный проект</b><p>Быстро соберём шаблонный вариант в корпоративных цветах за 24 часа</p></div><div class="badge">24</div></div>
     </div>
-    <div class="steps" style="margin-top:14px">
+    <div class="steps" style="margin-top:32px">
       <div class="step"><span>(01)</span>Разбираемся в задаче</div>
       <div class="step"><span>(02)</span>Работаем с информацией</div>
       <div class="step"><span>(03)</span>Выстраиваем логику</div>

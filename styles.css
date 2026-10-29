@@ -52,8 +52,8 @@ em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--acce
 /* заголовки */
 h1,h2{font-weight:500;letter-spacing:-.03em;line-height:1.05}
 h1{font-size:clamp(40px,6.4vw,84px);text-align:center;padding:76px 0 56px}
-h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:36px}
-section{padding:64px 0}
+h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:clamp(36px,4.5vw,64px)}
+section{padding:clamp(72px,9vw,140px) 0}
 
 /* клиенты */
 .clients{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 64px;padding:20px 0 70px}
@@ -74,15 +74,15 @@ section{padding:64px 0}
 .tags span{font-size:11px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.22);backdrop-filter:blur(6px)}
 .tile.light .tags span{background:rgba(123,92,240,.12)}
 .tags.dark span{background:var(--accent-soft);color:var(--accent)}
-.more{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:18px 24px;margin-top:40px;font-size:16px}
+.more{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:18px 24px;margin-top:56px;font-size:16px}
 
 /* услуги */
 .services h2{max-width:860px}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;font-size:14px;line-height:1.7;margin-top:20px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;font-size:14px;line-height:1.7;margin-top:40px}
 .cols div{border-top:1px solid var(--line);padding-top:14px}
 
 /* ИИ-система */
-.ai .lead2{max-width:720px;font-size:17px;color:#4a4757;margin:-10px 0 36px}
+.ai .lead2{max-width:720px;font-size:17px;color:#4a4757;margin:-20px 0 56px}
 .ai-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:stretch}
 .video{border-radius:var(--r);min-height:380px;background:linear-gradient(135deg,#17151d,#2c2650 60%,#4a36a8);display:grid;place-items:center;text-align:center;padding:30px;color:#cfc8f5;font-size:14px;position:relative;overflow:hidden}
 .video::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(123,92,240,.45),transparent 55%);animation:glow 6s ease-in-out infinite alternate}
@@ -100,7 +100,7 @@ section{padding:64px 0}
 .f i{flex:none;width:46px;height:46px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700}
 .f b{display:block;font-size:14px;font-weight:600}
 .f p{font-size:13px;color:var(--mute)}
-.types{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+.types{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
 .type{background:var(--card);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);min-height:180px;display:flex;justify-content:space-between;gap:16px}
 .type b{display:block;margin:8px 0 4px;font-size:16px}.type p{font-size:13px;color:var(--mute)}
 .pill{font-size:11px;padding:3px 10px;border-radius:999px;background:#ececf1}
@@ -131,7 +131,7 @@ section{padding:64px 0}
 .plan li::before{content:"✦";position:absolute;left:0;color:var(--accent);font-size:11px;top:3px}
 
 /* форма: на всю ширину */
-.form{position:relative;z-index:1;background:var(--card);border-radius:64px 64px 0 0;padding:80px 0 120px;margin-top:40px}
+.form{position:relative;z-index:1;background:var(--card);border-radius:64px 64px 0 0;padding:clamp(72px,8vw,120px) 0 140px;margin-top:clamp(40px,6vw,100px)}
 .form form{display:grid;gap:26px;width:100%}
 .row{display:flex;gap:20px;align-items:baseline;font-size:clamp(18px,2.4vw,26px);font-weight:500}
 .row label{white-space:nowrap}

@@ -236,7 +236,7 @@ select.cs{display:none}
 .modal-x:hover{background:var(--accent-soft);transform:rotate(90deg)}
 
 /* лента и страница материала */
-.page-title{padding:56px 0 24px}
+.page-title{padding:clamp(40px,5vw,72px) 0 clamp(40px,5vw,72px)}
 .page-title h1{text-align:left;padding:0}
 .chips{margin:24px 0}
 .crumb{padding:36px 0 18px;font-size:14px}

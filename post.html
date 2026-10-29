@@ -69,8 +69,11 @@
     <form class="modal-form" id="форма-окна">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
       <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом <span class="emo" role="img" aria-label="знак мира" style="--r:8deg">✌️</span></h3>
+      <p class="tariff-chip" id="чип-тарифа" hidden></p>
+      <input type="hidden" name="тариф" id="тариф-окна">
       <input name="имя" required placeholder="введите ваше имя" autocomplete="name">
       <input name="связь" required placeholder="почта или телеграм">
+      <div class="fld"><span class="fld-l">тема запроса</span><select class="cs" name="тема" id="тема-окна" aria-label="Тема запроса"><option>Новый проект</option><option>Тарифы и стоимость</option><option>Техническая поддержка</option><option>Сотрудничество</option><option>Другое</option></select></div>
       <textarea name="задача" rows="2" placeholder="коротко опишите задачу"></textarea>
       <label class="attach"><input type="file" name="файл"><span class="attach-t">прикрепить файл</span></label>
       <div><button class="btn btn-accent" type="submit">отправить</button></div>

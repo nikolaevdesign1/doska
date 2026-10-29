@@ -159,6 +159,14 @@ section{padding:clamp(72px,9vw,140px) 0}
 .plan h3{font-size:20px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
 .plan h3 small{font-size:11px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px}
 .price{font-size:32px;font-weight:700;letter-spacing:-.03em}
+.plans.one{grid-template-columns:1fr}
+.plans.one .plan ul{display:block;columns:2;column-gap:48px}
+.plans.one .plan li{break-inside:avoid;margin-bottom:10px}
+.plans.one .plan .btn{align-self:flex-start;padding-left:48px;padding-right:48px}
+.tariff-chip{align-self:flex-start;background:var(--accent-soft);color:var(--accent);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700}
+.fld{display:grid;gap:2px}
+.fld-l{font-size:12px;color:var(--mute)}
+.modal-form .sel-btn{padding:12px 2px}
 .plan p{font-size:13px;color:var(--mute)}
 .plan ul{list-style:none;font-size:14px;display:grid;gap:8px;flex:1}
 .plan li{padding-left:22px;position:relative}
@@ -274,6 +282,7 @@ select.cs{display:none}
 .menu-list a:hover{padding-left:20px;color:var(--accent)}
 
 @media(max-width:900px){
+  .plans.one .plan ul{columns:1}
   .wrap{padding:0 20px}
   .nav,.head .btn:not(.burger){display:none}
   .burger{display:inline-flex}

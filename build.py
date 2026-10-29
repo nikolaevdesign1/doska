@@ -80,6 +80,23 @@ def page(path,title,desc,body):
     h=HEAD.format(title=title,desc=desc,site=SITE,path=path)
     return h+body+FOOT
 D='ДОСКА — агентство: помогаем брендам решать дизайн-задачи. Сайты, презентации, приложения, брендинг.'
+FORM='''<section class="form" id="заявка"><div class="wrap">
+  <form id="форма">
+    <div class="row"><label>привет! меня зовут</label><input required placeholder="введите ваше имя"></div>
+    <div class="row"><label>хотелось бы заказать у вас</label>
+      <select class="cs" id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
+    <div class="row"><label>планируем заложить на проект</label>
+      <select class="cs"><option>до 100 000 ₽</option><option>100 000 – 300 000 ₽</option><option>300 000 – 700 000 ₽</option><option>более 700 000 ₽</option><option>пока не знаем</option></select></div>
+    <div class="row"><label>вкратце у нас следующая задача</label><textarea rows="1" placeholder="опишите, что необходимо сделать, на звонке всё обсудим подробнее"></textarea></div>
+    <div class="row"><label>ответ можно прислать сюда</label><input required placeholder="тут может быть ваша почта или телеграм / вотсап"></div>
+    <div class="form-foot">
+      <p class="small">Отправляя форму, вы даёте согласие<br>с <a href="#">Политикой обработки персональных данных</a></p>
+      <button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость</button>
+    </div>
+    <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+  </form>
+</div></section>
+'''
 INDEX='''
 <main>
 <div class="wrap">
@@ -145,23 +162,7 @@ INDEX='''
   </section>
 </div>
 
-<section class="form" id="заявка"><div class="wrap">
-  <form id="форма">
-    <div class="row"><label>привет! меня зовут</label><input required placeholder="введите ваше имя"></div>
-    <div class="row"><label>хотелось бы заказать у вас</label>
-      <select class="cs" id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
-    <div class="row"><label>планируем заложить на проект</label>
-      <select class="cs"><option>до 100 000 ₽</option><option>100 000 – 300 000 ₽</option><option>300 000 – 700 000 ₽</option><option>более 700 000 ₽</option><option>пока не знаем</option></select></div>
-    <div class="row"><label>вкратце у нас следующая задача</label><textarea rows="1" placeholder="опишите, что необходимо сделать, на звонке всё обсудим подробнее"></textarea></div>
-    <div class="row"><label>ответ можно прислать сюда</label><input required placeholder="тут может быть ваша почта или телеграм / вотсап"></div>
-    <div class="form-foot">
-      <p class="small">Отправляя форму, вы даёте согласие<br>с <a href="#">Политикой обработки персональных данных</a></p>
-      <button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость</button>
-    </div>
-    <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-  </form>
-</div></section>
-</main>
+{{FORM}}</main>
 '''
 LENTA='''
 <main><div class="wrap">
@@ -184,7 +185,8 @@ KONTAKTY='''
     </aside>
     <nav class="menu-list" id="соцсети" aria-label="Соцсети"></nav>
   </div>
-</div></main>
+</div>
+{{FORM}}</main>
 '''
 POST='''
 <main><div class="wrap">
@@ -205,7 +207,7 @@ def w(p,s):
     d=os.path.dirname(p)
     if d: os.makedirs(d,exist_ok=True)
     open(p,'w').write(s)
-w('index.html',page('/','ДОСКА — помогаем брендам решать дизайн-задачи',D,INDEX))
+w('index.html',page('/','ДОСКА — помогаем брендам решать дизайн-задачи',D,INDEX.replace('{{FORM}}',FORM)))
 w('lenta/index.html',page('/lenta','Лента — ДОСКА','Материалы и проекты агентства ДОСКА.',LENTA))
-w('kontakty/index.html',page('/kontakty','Контакты — ДОСКА','Контакты и соцсети агентства ДОСКА.',KONTAKTY))
+w('kontakty/index.html',page('/kontakty','Контакты — ДОСКА','Контакты и соцсети агентства ДОСКА.',KONTAKTY.replace('{{FORM}}',FORM)))
 w('post.html',page('/lenta','Материал — ДОСКА','Материалы и проекты агентства ДОСКА.',POST))

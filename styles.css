@@ -105,7 +105,7 @@ section{padding:clamp(72px,9vw,140px) 0}
 .type b{display:block;margin:8px 0 4px;font-size:16px}.type p{font-size:13px;color:var(--mute)}
 .pill{font-size:11px;padding:3px 10px;border-radius:999px;background:#ececf1}
 .pill.g{background:#d8f7dd;color:#1c7a30}
-.badge{flex:none;align-self:center;width:96px;height:96px;border-radius:50%;background:conic-gradient(var(--yellow) 0 60%,#4f8cff 0);display:grid;place-items:center;font-family:var(--f-logo);font-size:24px;color:#fff}
+.type img{flex:none;align-self:center;height:150px;width:auto;max-width:48%;object-fit:contain}
 
 /* процесс */
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}

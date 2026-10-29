@@ -139,16 +139,36 @@
       }));
       if(!анимировать)появление(пл);
     }
+    /* табы: общая дорожка и скользящий выбор */
+    вкл.classList.add('seg');
+    const ползунок=document.createElement('span');ползунок.className='seg-thumb';ползунок.setAttribute('aria-hidden','true');
+    вкл.appendChild(ползунок);
+    const табы=[];
+    function поставить(){
+      const а=табы.find(e=>e.classList.contains('on'));if(!а)return;
+      ползунок.style.width=а.offsetWidth+'px';ползунок.style.transform='translateX('+а.offsetLeft+'px)';
+    }
+    function выбрать(t,к,фокус){
+      if(t.classList.contains('on'))return;
+      табы.forEach(e=>{const on=e===t;e.classList.toggle('on',on);e.setAttribute('aria-selected',on);e.tabIndex=on?0:-1});
+      поставить();if(фокус)t.focus();
+      t.scrollIntoView({block:'nearest',inline:'nearest',behavior:тихо?'auto':'smooth'});
+      сменить(пл,()=>тарифы(к,true));
+    }
     Object.keys(ТАРИФЫ).forEach((к,i)=>{
-      const t=document.createElement('button');t.className='tab'+(i?'':' on');t.textContent=к;
-      t.onclick=()=>{
-        if(t.classList.contains('on'))return;
-        $$('.tab',вкл).forEach(e=>e.classList.toggle('on',e===t));
-        сменить(пл,()=>тарифы(к,true));
-      };
-      вкл.appendChild(t);
+      const t=document.createElement('button');t.type='button';t.className='tab'+(i?'':' on');t.textContent=к;
+      t.setAttribute('role','tab');t.setAttribute('aria-selected',i===0);t.tabIndex=i?-1:0;
+      t.onclick=()=>выбрать(t,к,false);
+      t.addEventListener('keydown',e=>{
+        const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;
+        e.preventDefault();const j=(табы.indexOf(t)+d+табы.length)%табы.length;выбрать(табы[j],Object.keys(ТАРИФЫ)[j],true);
+      });
+      табы.push(t);вкл.appendChild(t);
     });
+    вкл.setAttribute('aria-label','Направления');пл.setAttribute('role','tabpanel');
     тарифы(Object.keys(ТАРИФЫ)[0],false);
+    поставить();addEventListener('resize',поставить);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(поставить);
   }
 
   /* ---------- кастомные выпадающие списки ---------- */

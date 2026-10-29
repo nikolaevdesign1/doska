@@ -103,16 +103,18 @@ FORM='''<section class="form" id="заявка"><div class="wrap">
 INDEX='''
 <main>
 <div class="wrap">
+  <div class="hero dots">
   <h1>помогаем брендам<br>решать <em>дизайн-задачи</em></h1>
   <div class="hero-cta"><button class="btn btn-accent btn-lg" type="button" data-order>оставить заявку</button></div>
   <div class="clients"><img src="/assets/clients/klient-1.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-2.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-3.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-4.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-5.png" alt="Логотип клиента" loading="eager"></div>
+  </div>
 
   <section id="кейсы" style="padding-top:0">
     <div class="grid" id="лента"></div>
     <div class="more"><span>Сделаем так же и ещё круче <span class="emo" role="img" aria-label="очки" style="--r:-6deg">😎</span></span><a class="btn btn-accent" href="/lenta">вся лента</a></div>
   </section>
 
-  <section id="возможности" class="services">
+  <section id="возможности" class="services dots">
     <h2>сайты, презентации,<br>приложения, брендинг<br><em>и многое другое..</em></h2>
     <div class="cols">
       <div>лендинги<br>интернет-магазины<br>мобильные приложения<br>корпоративные сайты<br>дизайн-системы<br>А/Б-тестирование</div>

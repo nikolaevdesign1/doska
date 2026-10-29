@@ -169,6 +169,19 @@ INDEX='''
     </div>
   </section>
 
+  <section id="отзывы">
+    <h2>что говорят <em>клиенты</em></h2>
+    <p class="sub">Коротко о том, как с нами работается.</p>
+    <div class="revs">
+      <figure class="rev"><blockquote>Сделали презентацию для инвестора за два дня. Всё аккуратно, без правок по десять кругов. Инвестор спросил, кто нам это оформил.</blockquote><figcaption><span class="ava" style="background:linear-gradient(135deg,#c9f0d8,#8fd6ae)" aria-hidden="true">🌿</span><span><b>Анна Соколова</b><small>директор по маркетингу</small></span></figcaption></figure>
+      <figure class="rev"><blockquote>Пришли с набором мыслей, ушли с логотипом и понятной айдентикой. Ребята сами предложили то, о чём мы не додумались.</blockquote><figcaption><span class="ava" style="background:linear-gradient(135deg,#d9d0ff,#a592f5)" aria-hidden="true">🚀</span><span><b>Максим Крылов</b><small>основатель стартапа</small></span></figcaption></figure>
+      <figure class="rev"><blockquote>Новый сайт магазина собрали быстро, заявок стало заметно больше. Всегда отвечали в тот же день, это очень подкупает.</blockquote><figcaption><span class="ava" style="background:linear-gradient(135deg,#ffd9e6,#f5a3c0)" aria-hidden="true">🌸</span><span><b>Елена Власова</b><small>владелица интернет-магазина</small></span></figcaption></figure>
+      <figure class="rev"><blockquote>Брали срочный проект: шаблон в корпоративных цветах за сутки. Успели к встрече с клиентом, выглядело дорого.</blockquote><figcaption><span class="ava" style="background:linear-gradient(135deg,#fff0c2,#f5cd5c)" aria-hidden="true">⚡</span><span><b>Дмитрий Орлов</b><small>руководитель отдела продаж</small></span></figcaption></figure>
+      <figure class="rev"><blockquote>Работаем по тарифу поддержки. Мелкие задачи по сайту закрывают за день, больше не ищем исполнителей на каждую правку.</blockquote><figcaption><span class="ava" style="background:linear-gradient(135deg,#d4f0f7,#8bcfe3)" aria-hidden="true">🍀</span><span><b>Ольга Миронова</b><small>генеральный директор</small></span></figcaption></figure>
+      <figure class="rev"><blockquote>Понравилось, что всё прозрачно: сроки, этапы, цены. Никаких сюрпризов в конце, результат совпал с ожиданиями.</blockquote><figcaption><span class="ava" style="background:linear-gradient(135deg,#e6e6ee,#b3b1c4)" aria-hidden="true">🎯</span><span><b>Игорь Лебедев</b><small>управляющий партнёр</small></span></figcaption></figure>
+    </div>
+  </section>
+
   <section id="тарифы-блок">
     <h2>тарифы <em>и направления</em></h2>
     <p class="sub">Выберите направление и тариф: цена, состав работ и сроки — всё на одном экране.</p>

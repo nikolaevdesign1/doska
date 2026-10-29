@@ -13,7 +13,7 @@ body.lock{overflow:hidden}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
-em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--accent)}
+em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--accent);font-size:1.16em;line-height:.9}
 .u{text-decoration:underline}
 
 /* появление страницы и переходы между страницами */

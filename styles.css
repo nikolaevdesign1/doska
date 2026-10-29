@@ -208,7 +208,7 @@ section h2+.sub,.more-posts h2+.sub{margin-bottom:clamp(32px,4vw,56px)}
 .ok.show{display:block;animation:pop .4s var(--ease)}
 
 /* кастомный список */
-.sel{position:relative;flex:1;min-width:0}
+.sel{position:relative;flex:1;min-width:0;letter-spacing:0}
 select.cs{display:none}
 .sel-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;border:0;border-bottom:1px solid var(--ink);letter-spacing:0;font-weight:500;background:transparent;padding:8px 2px;font-size:15px;text-align:left;cursor:pointer;transition:border-color .25s}
 .sel-btn:hover,.sel.open .sel-btn{border-color:var(--accent)}
@@ -373,3 +373,42 @@ select.cs{display:none}
 .form-contact{font-size:16px;font-weight:500;color:#4a4757;margin:0 0 20px}
 .form-contact a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 #форма .form-contact{font-size:clamp(16px,1.6vw,20px);margin-bottom:28px}
+
+/* ---------- печатающийся фиолетовый текст ---------- */
+.tp::after{content:"";display:inline-block;width:2px;height:.85em;background:currentColor;margin-left:3px;vertical-align:-.05em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- страница «доска.поддержка» ---------- */
+.sp-hero{text-align:center}
+.sp-hero .sub{margin:20px auto 0}
+.rf{display:inline-flex;align-items:center;gap:8px;margin:22px 0 0;padding:8px 16px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:14px}
+.rf-i{font-size:10px}
+.sp-hero .hero-cta{margin-top:28px}
+.sp-sec{padding:clamp(40px,5vw,72px) 0 0}
+.video.xl{min-height:clamp(260px,42vw,560px);font-size:16px}
+.blk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.blk{background:var(--card);border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.blk h3{font-size:20px;font-weight:700;letter-spacing:-.02em}
+.blk>p{color:#625e70;font-size:14px;line-height:1.5;margin:8px 0 18px}
+.blk ul{list-style:none;display:grid;gap:10px;font-size:14px;font-weight:500}
+.blk li{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line);padding-top:10px}
+.blk li span{font-size:12px;font-weight:700;color:var(--accent)}
+.rm-wrap{overflow-x:auto;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow)}
+.rm{width:100%;border-collapse:collapse;font-size:15px;font-weight:500;min-width:520px}
+.rm th{text-align:left;font-size:12px;color:var(--mute);font-weight:700;padding:18px 24px 10px}
+.rm td{padding:16px 24px;border-top:1px solid var(--line)}
+.rm td:first-child{font-weight:700;width:140px}
+.stt{display:inline-block;padding:4px 12px;border-radius:999px;background:#f0eff4;font-size:12px;font-weight:700;color:#625e70;white-space:nowrap}
+.stt.go{background:var(--accent-soft);color:var(--accent)}
+.faq{display:grid;gap:10px;max-width:860px}
+.fq{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:0 24px}
+.fq summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1;transition:transform .3s var(--ease)}
+.fq[open] summary::after{transform:rotate(45deg)}
+.fq p{padding:0 0 22px;color:#4a4757;line-height:1.6;font-size:15px;font-weight:500;max-width:700px}
+.cta{background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(32px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cta h2{margin:0;color:#fff}
+.cta em{color:#b9a8ff}
+@media(max-width:980px){.blk-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.blk-grid{grid-template-columns:1fr}}

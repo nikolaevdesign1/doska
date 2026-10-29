@@ -32,6 +32,7 @@ HEAD='''<!doctype html>
   <nav class="nav">
     <a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы <span class="nav-sub">(dprofile)</span></a>
     <a href="/lenta">лента</a>
+    <a href="/podderzhka">поддержка</a>
     <a href="/kontakty">контакты</a>
   </nav>
   <button class="btn" type="button" data-order>заказать дизайн</button>
@@ -46,7 +47,7 @@ FOOT='''
       <div><h4>следите за нами</h4><ul class="arrows" id="подвал-соцсети"></ul></div>
       <div><h4>меню</h4><ul>
         <li><a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы</a></li>
-        <li><a href="/lenta">лента</a></li><li><a href="/kontakty">контакты</a></li><li><a href="/#заявка">заявка</a></li></ul></div>
+        <li><a href="/lenta">лента</a></li><li><a href="/podderzhka">поддержка</a></li><li><a href="/kontakty">контакты</a></li><li><a href="/#заявка">заявка</a></li></ul></div>
       <div><h4>связаться</h4><ul><li><a href="mailto:hello@doska.agency">hello@doska.agency</a></li></ul></div>
     </div>
   </div>
@@ -353,6 +354,48 @@ USLOVIYA='''
   <p>Вопросы и претензии присылайте на <a href="mailto:hello@doska.agency">hello@doska.agency</a>. Мы отвечаем в течение пяти рабочих дней.</p>
 </div></main>
 '''
+PODD='''
+<main><div class="wrap">
+  <div class="sp-hero hero">
+    <h1>доска<em>.поддержка</em></h1>
+    <p class="sub">Сервис технической поддержки сайтов: оставляете заявку на правку, специалист проверяет и выполняет в рамках тарифа.</p>
+    <p class="rf"><span class="rf-i" aria-hidden="true">●</span> серверы находятся в Российской Федерации</p>
+    <div class="hero-cta"><button class="btn btn-accent" type="button" data-integr>оставить заявку на интеграцию</button></div>
+  </div>
+  <section class="sp-sec">
+    <div class="video xl" role="img" aria-label="Место под демо-видео"><span>здесь будет большое демо-видео о том, как работает доска.поддержка</span></div>
+  </section>
+  <section class="sp-sec">
+    <h2>как это <em>работает</em></h2>
+    <p class="sub">Пять шагов от подключения до результата.</p>
+    <div class="steps"><div class="step"><span>(01)</span>Подключаем сайт и доступы</div><div class="step"><span>(02)</span>Заводим личный кабинет</div><div class="step"><span>(03)</span>Вы оставляете заявку на правку</div><div class="step"><span>(04)</span>Специалист проверяет и выполняет</div><div class="step"><span>(05)</span>Вы получаете результат и отчёт</div></div>
+  </section>
+  <section class="sp-sec">
+    <h2>тарифы <em>по блокам</em></h2>
+    <p class="sub">Что именно мы делаем в каждом блоке и как это зависит от тарифа.</p>
+    <div class="blk-grid"><div class="blk"><h3>Тексты и фото</h3><p>Меняем тексты, заголовки, цены и картинки на страницах</p><ul><li><span>Базовый</span>Мелкие правки</li><li><span>Стандарт</span>Правки средних разделов</li><li><span>Кастом</span>Любой объём по договору</li></ul></div><div class="blk"><h3>Блоки и вёрстка</h3><p>Добавляем и двигаем блоки, чиним отображение на телефонах</p><ul><li><span>Базовый</span>Типовые блоки</li><li><span>Стандарт</span>Новые секции и страницы</li><li><span>Кастом</span>Сложные блоки и анимации</li></ul></div><div class="blk"><h3>Формы и заявки</h3><p>Следим, чтобы заявки доходили до вас, настраиваем уведомления</p><ul><li><span>Базовый</span>Проверка и настройка</li><li><span>Стандарт</span>Новые формы и поля</li><li><span>Кастом</span>Связка с CRM и мессенджерами</li></ul></div><div class="blk"><h3>Скорость и SEO</h3><p>Сжимаем картинки, проверяем скорость, поддерживаем SEO-основу</p><ul><li><span>Базовый</span>Раз в месяц</li><li><span>Стандарт</span>Раз в две недели</li><li><span>Кастом</span>Постоянный контроль</li></ul></div><div class="blk"><h3>Сервисы и интеграции</h3><p>Подключаем метрику, оплату, чаты и другие сервисы</p><ul><li><span>Базовый</span>Подключение одного сервиса</li><li><span>Стандарт</span>До трёх сервисов в месяц</li><li><span>Кастом</span>Любые интеграции по плану</li></ul></div><div class="blk"><h3>Безопасность и копии</h3><p>Обновляем, делаем резервные копии, следим за доступностью</p><ul><li><span>Базовый</span>Копия раз в неделю</li><li><span>Стандарт</span>Копия каждый день</li><li><span>Кастом</span>Копия каждый день и дежурный специалист</li></ul></div></div>
+  </section>
+  <section class="sp-sec">
+    <h2>что сделаем <em>до конца года</em></h2>
+    <p class="sub">План развития сервиса: что запускаем и что интегрируем.</p>
+    <div class="rm-wrap"><table class="rm"><thead><tr><th>месяц</th><th>что делаем</th><th>статус</th></tr></thead><tbody><tr><td>Ноябрь</td><td>Личный кабинет клиента: заявки на правки и статусы</td><td><span class="stt go">в работе</span></td></tr><tr><td>Ноябрь</td><td>Подключение первых клиентов и перенос их сайтов</td><td><span class="stt go">в работе</span></td></tr><tr><td>Ноябрь</td><td>Уведомления о выполненных правках на почту и в мессенджер</td><td><span class="stt">запланировано</span></td></tr><tr><td>Декабрь</td><td>Интеграция с WordPress и Tilda: правки прямо из кабинета</td><td><span class="stt">запланировано</span></td></tr><tr><td>Декабрь</td><td>Отчёт о скорости и доступности сайта раз в месяц</td><td><span class="stt">запланировано</span></td></tr><tr><td>Декабрь</td><td>Автоматическая проверка правок перед публикацией</td><td><span class="stt">запланировано</span></td></tr></tbody></table></div>
+  </section>
+  <section class="sp-sec" id="тарифы-п">
+    <h2>тарифы <em>поддержки</em></h2>
+    <div class="period-row"><span class="period-l">оплата</span><div class="tabs" id="период-п-табы"></div><span class="period-note">за полгода на 15% дешевле, чем помесячно, а за год — ещё на 15% дешевле</span></div>
+    <div class="plans" id="тарифы-п-список"></div>
+  </section>
+  <section class="sp-sec">
+    <h2>частые <em>вопросы</em></h2>
+    <p class="sub">Если вашего вопроса нет, напишите нам.</p>
+    <div class="faq"><details class="fq"><summary>Где находятся серверы?</summary><p>Все серверы доска.поддержки находятся в Российской Федерации. Данные клиентов хранятся и обрабатываются на территории РФ.</p></details><details class="fq"><summary>Что такое доска.поддержка?</summary><p>Это сервис технической поддержки сайтов: вы оставляете заявку на правку в личном кабинете, а специалист проверяет её и выполняет в рамках вашего тарифа.</p></details><details class="fq"><summary>Как быстро вы выполняете правки?</summary><p>Сроки зависят от тарифа: от нескольких рабочих часов до двух рабочих дней. Точные сроки указаны в карточке тарифа и в договоре.</p></details><details class="fq"><summary>Что входит в тариф и что нет?</summary><p>Входят правки в пределах лимита вашего тарифа: тексты, блоки, формы, настройки. Новый дизайн с нуля и разработка новых разделов оцениваются отдельно.</p></details><details class="fq"><summary>Можно ли подключить мой сайт, сделанный не вами?</summary><p>Да. Сначала смотрим сайт, платформу и доступы, затем говорим, что можем поддерживать, и подключаем.</p></details><details class="fq"><summary>Как оплатить и можно ли расторгнуть?</summary><p>Оплата вперёд за месяц, полгода или год: чем длиннее период, тем дешевле месяц. Неиспользованный период пересчитывается и возвращается по условиям оплаты и возврата.</p></details><details class="fq"><summary>Как защищены мои данные?</summary><p>Доступы хранятся в зашифрованном виде, действия по сайту записываются, а к данным имеют доступ только специалисты, назначенные на ваш проект.</p></details></div>
+  </section>
+  <section class="sp-sec">
+    <div class="cta"><h2>подключим вашу поддержку<br><em>за один день</em></h2><button class="btn btn-accent" type="button" data-integr>оставить заявку на интеграцию</button></div>
+  </section>
+</div>
+{{FORM}}</main>
+'''
 def w(p,s):
     d=os.path.dirname(p)
     if d: os.makedirs(d,exist_ok=True)
@@ -363,4 +406,5 @@ w('kontakty/index.html',page('/kontakty','Контакты — ДОСКА','Ко
 w('post.html',page('/lenta','Материал — ДОСКА','Материалы и проекты агентства ДОСКА.',POST))
 w('rekvizity/index.html',page('/rekvizity','Реквизиты — ДОСКА','Реквизиты индивидуального предпринимателя.',REKVIZITY))
 w('usloviya/index.html',page('/usloviya','Условия оплаты, доставки и возврата — ДОСКА','Как оплатить услуги, получить результат и вернуть деньги.',USLOVIYA))
+w('podderzhka/index.html',page('/podderzhka','Поддержка — ДОСКА','доска.поддержка: сервис технической поддержки сайтов, серверы в России.',PODD.replace('{{FORM}}',FORM)))
 w('politika/index.html',page('/politika','Политика конфиденциальности — ДОСКА','Как мы обрабатываем и защищаем персональные данные.',POLITIKA))

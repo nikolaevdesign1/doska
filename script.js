@@ -13,7 +13,7 @@
   function появление(корень){
     if(!io){$$('.rv',корень).forEach(e=>e.classList.remove('rv'));return}
     const группы=new Map();
-    $$('h1,h2,.sub,.clients,.tile,.more,.cols>div,.lead2,.video,.ai-steps li,.f,.type,.step,.rev,.week,.tabs,.plan,.row,.small,.founder,.menu-list a,.post-cover,.post-h,.post-text,.crumb,.lead,.top>div',корень).forEach(e=>{
+    $$('h1,h2,.sub,.clients,.tile,.more,.cols>div,.lead2,.video,.ai-steps li,.f,.type,.step,.rev,.week,.blk,.fq,.rm-wrap,.cta,.rf,.tabs,.plan,.row,.small,.founder,.menu-list a,.post-cover,.post-h,.post-text,.crumb,.lead,.top>div',корень).forEach(e=>{
       if(e.classList.contains('rv')||e.closest('.modal,.cookie,.head'))return;
       const п=e.parentElement;const i=группы.get(п)||0;группы.set(п,i+1);
       e.classList.add('rv');e.style.setProperty('--d',Math.min(i,6)*.07+'s');io.observe(e);
@@ -397,6 +397,74 @@
     }).observe(блок);
     let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{размер();рисовать(performance.now())},120)});
   });
+
+  /* ---------- страница «доска.поддержка»: кнопки заявки и тарифы ---------- */
+  $$('[data-integr]').forEach(b=>b.addEventListener('click',()=>{
+    if(window.открытьЗаказ)window.открытьЗаказ({тариф:'Интеграция доска.поддержки',тема:'Техническая поддержка'});
+  }));
+  const плП=$('#тарифы-п-список'),перП=$('#период-п-табы');
+  if(плП&&перП){
+    const вывести=()=>{
+      плП.innerHTML=ТАРИФЫ[КП].map(t=>{const ц=цена(t[1]);
+        return '<div class="plan'+(t[4]?' hit':'')+'"><h3>'+t[0]+(t[4]?'<small>'+(t[4]===1?'популярный':t[4])+'</small>':'')+'</h3><div class="price">'+ц.главная+'</div><p class="period">'+ц.доп+'</p><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li'+(/^Не входят/.test(y)?' class="no"':'')+'>'+y+'</li>').join('')+'</ul><button type="button" class="btn '+(t[4]?'btn-accent':'')+'" data-н="'+t[0]+'">оставить заявку на интеграцию</button></div>'}).join('');
+      $$('.plan .btn',плП).forEach(b=>b.addEventListener('click',()=>{
+        if(window.открытьЗаказ)window.открытьЗаказ({тариф:КП+' · '+b.dataset.н+' · оплата '+ПЕРИОДЫ[период],тема:'Техническая поддержка'});
+      }));
+    };
+    перП.classList.add('seg');
+    const пт=document.createElement('span');пт.className='seg-thumb';пт.setAttribute('aria-hidden','true');перП.appendChild(пт);
+    const пк=[];
+    const пост=()=>{const а=пк.find(e=>e.classList.contains('on'));if(!а||!а.offsetWidth)return;пт.style.width=а.offsetWidth+'px';пт.style.transform='translateX('+а.offsetLeft+'px)'};
+    Object.keys(ПЕРИОДЫ).forEach(п=>{
+      const t=document.createElement('button');t.type='button';t.className='tab'+(п===период?' on':'');t.innerHTML='<span class="t">'+п+'</span>';
+      t.onclick=()=>{
+        if(п===период)return;
+        период=п;пк.forEach(e=>e.classList.toggle('on',e===t));пост();
+        сменить(плП,()=>{вывести();$$('.plan',плП).forEach(e=>{if(!тихо)e.classList.add('pop')})});
+      };
+      пк.push(t);перП.appendChild(t);
+    });
+    вывести();пост();addEventListener('resize',пост);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(пост);
+  }
+
+  /* ---------- печатающийся фиолетовый текст ---------- */
+  const ВАРИАНТЫ=['дизайн-задачи','задачи с сайтами','задачи с презентациями','задачи с айдентикой'];
+  function печатать(em,варианты,по_кругу){
+    const итог=em.textContent;em.setAttribute('aria-label',итог);
+    const h=em.closest('h1,h2');
+    if(h){
+      const сохр=em.textContent;
+      const самый=варианты.reduce((a,b)=>a.length>b.length?a:b);
+      em.textContent=самый;h.style.minHeight=h.offsetHeight+'px';em.textContent=сохр;
+    }
+    let i=0,k=0,стирать=false;
+    em.classList.add('tp');em.textContent='';
+    const ждать=(мс)=>setTimeout(шаг,мс);
+    function шаг(){
+      const сл=варианты[k];
+      if(!стирать){
+        i++;em.textContent=сл.slice(0,i);
+        if(i<сл.length)return ждать(55+Math.random()*35);
+        if(!по_кругу){em.classList.remove('tp');return}
+        стирать=true;return ждать(2300);
+      }
+      i--;em.textContent=сл.slice(0,i);
+      if(i>0)return ждать(28);
+      стирать=false;k=(k+1)%варианты.length;ждать(350);
+    }
+    ждать(250);
+  }
+  if(!тихо){
+    $$('main h1 em, main h2 em').forEach(em=>{
+      if(em.closest('.hero')&&em.closest('h1')&&location.pathname==='/'){
+        печатать(em,ВАРИАНТЫ,true);return;
+      }
+      if(!('IntersectionObserver' in window))return;
+      const o=new IntersectionObserver(es=>{if(es[0].isIntersecting){o.disconnect();печатать(em,[em.textContent],false)}},{threshold:.6});
+      o.observe(em);
+    });
+  }
 
   появление(document);
 })();

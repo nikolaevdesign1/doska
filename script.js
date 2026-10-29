@@ -105,7 +105,7 @@
     return a;
   };
   if(соц)window.СОЦСЕТИ.forEach(s=>соц.appendChild(ссылка(s,'a')));
-  if(пс)window.СОЦСЕТИ.filter(s=>s.н!=='почта').forEach(s=>пс.appendChild(ссылка(s,'li')));
+  if(пс)window.СОЦСЕТИ.forEach(s=>пс.appendChild(ссылка(s,'li')));
 
   /* ---------- тарифы ---------- */
   const ТАРИФЫ={

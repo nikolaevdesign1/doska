@@ -177,7 +177,7 @@ select.cs{display:none}
 /* подвал */
 .foot{position:relative;z-index:2;margin-top:clamp(60px,8vw,120px);background-color:#efeff1;border-radius:64px 64px 0 0;padding:64px 0 0;overflow:hidden}
 .foot.lap{margin-top:-64px}
-.foot::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.foot::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.22;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .foot .wrap{position:relative}
 .foot .top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
 .foot .lead{font-weight:700;font-size:24px;letter-spacing:-.02em;line-height:1.15;max-width:320px}

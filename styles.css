@@ -369,3 +369,7 @@ select.cs{display:none}
 .badge small{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
 .badge b{font-size:13px;font-weight:800;margin:3px 0;text-transform:uppercase;letter-spacing:.02em}
 .badge.c-сер{--bc:#a3a3a8}.badge.c-бронза{--bc:#b8ad74}.badge.c-золото{--bc:#e0b43c}.badge.c-фиолет{--bc:#7b5cf0}
+
+.form-contact{font-size:16px;font-weight:500;color:#4a4757;margin:0 0 20px}
+.form-contact a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+#форма .form-contact{font-size:clamp(16px,1.6vw,20px);margin-bottom:28px}

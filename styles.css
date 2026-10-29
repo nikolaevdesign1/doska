@@ -153,6 +153,8 @@ section{padding:clamp(72px,9vw,140px) 0}
 .plan h3{font-size:20px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
 .plan h3 small{font-size:11px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px}
 .price{font-size:32px;font-weight:700;letter-spacing:-.03em}
+.partner{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:32px;font-size:12px;color:var(--mute)}
+.partner img{height:22px;width:auto;opacity:.65;display:block}
 .plans.one{grid-template-columns:1fr}
 .plans.one .plan ul{display:block;columns:2;column-gap:48px}
 .plans.one .plan li{break-inside:avoid;margin-bottom:10px}

@@ -51,32 +51,52 @@
   }
 
   /* ---------- плитки ленты ---------- */
-  function плитка(x,анимировать,i){
+  const РАСКЛАДКА=[8,4,4,4,4,4,8];
+  function размеры(n){
+    const р=[];let строка=0;
+    for(let i=0;i<n;i++){
+      let w=РАСКЛАДКА[i%РАСКЛАДКА.length];
+      if(строка+w>12)w=12-строка;
+      р.push(w);строка=(строка+w)%12;
+    }
+    if(строка&&р.length)р[р.length-1]+=12-строка;
+    return р;
+  }
+  function плитка(x,анимировать,i,ширина){
+    if(x.секрет){
+      const d=document.createElement('div');
+      d.className='tile secret s'+ширина;d.style.setProperty('--art',x.ф);
+      d.innerHTML='<h3>'+x.т+'</h3><div class="mock" aria-hidden="true"><i></i><i></i><i></i><svg viewBox="0 0 300 90" preserveAspectRatio="none"><path d="M0 60 C30 55 50 30 80 38 S130 62 160 40 S210 20 240 34 S280 18 300 10"/><path d="M0 76 C40 70 60 60 90 66 S150 50 190 58 S260 52 300 40"/></svg></div><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1zm2 0h6V8a3 3 0 0 0-6 0v2z"/></svg>пока секрет</span>';
+      if(анимировать&&!тихо){d.classList.add('pop');d.style.setProperty('--d',Math.min(i,8)*.05+'s')}
+      return d;
+    }
     const a=document.createElement('a');
-    a.href='/lenta/'+x.с;a.className='tile '+x.р+(x.свет?' light':'');
+    a.href=x.ссылка;a.target='_blank';a.rel='noopener';
+    a.className='tile s'+ширина+(x.свет?' light':'');
     a.style.setProperty('--art',x.ф);
-    a.innerHTML='<div class="tags">'+x.м.map(t=>'<span>'+t+'</span>').join('')+'</div><h3>'+x.т+'</h3>';
+    a.innerHTML='<div class="tags"><span>'+x.тип+'</span><span>'+x.ист+'</span></div><h3>'+x.т+'<i class="go" aria-hidden="true"> ↗</i></h3>';
     if(анимировать&&!тихо){a.classList.add('pop');a.style.setProperty('--d',Math.min(i,8)*.05+'s')}
     return a;
   }
   function вывестиПлитки(к,список,анимировать){
     к.innerHTML='';
-    список.forEach((x,i)=>к.appendChild(плитка(x,анимировать,i)));
+    const р=размеры(список.length);
+    список.forEach((x,i)=>к.appendChild(плитка(x,анимировать,i,р[i])));
     if(!анимировать)появление(к);
   }
   const лента=$('#лента');
   if(лента){
     const всё=лента.dataset.всё==='1';
-    вывестиПлитки(лента,всё?window.ЛЕНТА:window.ЛЕНТА.slice(0,7),false);
+    вывестиПлитки(лента,всё?window.ЛЕНТА:window.ЛЕНТА.slice(0,6),false);
   }
   const чипы=$('#чипы');
   if(чипы){
-    const метки=[...new Set(window.ЛЕНТА.flatMap(x=>x.м))];
+    const метки=[...new Set(window.ЛЕНТА.map(x=>x.тип))];
     ['все',...метки].forEach((m,i)=>{
       const t=document.createElement('button');t.className='tab'+(i?'':' on');t.textContent=m;
       t.onclick=()=>{
         $$('.tab',чипы).forEach(e=>e.classList.toggle('on',e===t));
-        сменить(лента,()=>вывестиПлитки(лента,window.ЛЕНТА.filter(x=>m==='все'||x.м.includes(m)),true));
+        сменить(лента,()=>вывестиПлитки(лента,window.ЛЕНТА.filter(x=>m==='все'||x.тип===m),true));
       };
       чипы.appendChild(t);
     });

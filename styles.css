@@ -86,7 +86,7 @@ section h2+.sub,.more-posts h2+.sub{margin-bottom:clamp(32px,4vw,56px)}
 /* сетка кейсов */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
 .tile{position:relative;border-radius:var(--r);overflow:hidden;min-height:336px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s}
-.tile.s4{grid-column:span 4}.tile.s5{grid-column:span 5}.tile.s7{grid-column:span 7}.tile.s8{grid-column:span 8}.tile.s3{grid-column:span 3}
+.tile.s4{grid-column:span 4}.tile.s5{grid-column:span 5}.tile.s7{grid-column:span 7}.tile.s8{grid-column:span 8}.tile.s3{grid-column:span 3}.tile.s6{grid-column:span 6}.tile.s12{grid-column:span 12}
 .tile.tall{min-height:528px}
 .tile::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--art,#333);transition:transform .6s var(--ease)}
 .tile:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(40,30,90,.18)}
@@ -306,7 +306,7 @@ select.cs{display:none}
   .nav,.head .btn:not(.burger){display:none}
   .burger{display:inline-flex}
   .nav.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px;gap:16px;animation:pop .3s var(--ease)}
-  .tile,.tile.s3,.tile.s4,.tile.s5,.tile.s7,.tile.s8{grid-column:span 12;min-height:288px}
+  .tile,.tile.s3,.tile.s4,.tile.s5,.tile.s6,.tile.s7,.tile.s8,.tile.s12{grid-column:span 12;min-height:288px}
   .tile.tall{min-height:384px}
   .cols,.feat,.types,.plans,.ai-grid,.contacts{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
@@ -335,3 +335,18 @@ select.cs{display:none}
 .rev small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
 @media(max-width:980px){.revs{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.revs{grid-template-columns:1fr}}
+
+.tile .go{font-style:normal;opacity:.7;transition:transform .3s var(--ease),opacity .3s}.tile:hover .go{opacity:1;transform:translate(2px,-2px)}
+
+/* ---------- закрытый кейс (под соглашением о неразглашении) ---------- */
+.tile.secret{cursor:default}
+.tile.secret:hover{transform:none;box-shadow:none}
+.tile.secret:hover::before{transform:none}
+.tile.secret h3{font-size:clamp(20px,2.2vw,30px);font-weight:700;max-width:none;letter-spacing:-.02em;line-height:1.15}
+.tile.secret .mock{position:absolute;left:8%;right:8%;top:30%;bottom:-6%;border-radius:14px 14px 0 0;background:rgba(14,10,28,.85);filter:blur(7px);display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:22px 1fr;gap:10px;padding:14px;z-index:-1}
+.tile.secret .mock i{background:rgba(255,255,255,.14);border-radius:6px}
+.tile.secret .mock i:first-child{background:#7b3cf5}
+.tile.secret .mock svg{grid-column:1/-1;width:100%;height:100%;fill:none;stroke-width:2.5}
+.tile.secret .mock path:first-child{stroke:#2fae8a}.tile.secret .mock path:last-child{stroke:#b44fd6}
+.tile.secret .lock{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);font-size:15px;font-weight:600;color:rgba(255,255,255,.85);white-space:nowrap}
+.tile.secret .lock svg{width:16px;height:16px;fill:currentColor}

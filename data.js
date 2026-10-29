@@ -2,21 +2,18 @@
    с — адрес страницы (латиницей), т — заголовок, м — метки, ф — обложка (пока градиент),
    р — размер плитки в сетке, свет — светлая плитка. */
 window.ЛЕНТА = [
-  {с:'shablon-prezentatsiy',т:'Обновление корпоративного шаблона презентаций компании',м:['дизайн','вёрстка','брендинг'],ф:'linear-gradient(135deg,#eaf6ff,#fff)',свет:1,р:'s4'},
-  {с:'dizayn-podderzhka',т:'Аутсорсинг в дизайне: как устроена и кому подходит дизайн-поддержка?',м:['статья','полезное'],ф:'linear-gradient(120deg,#3a2f2a,#b98e6a 60%,#2a2320)',р:'s8'},
-  {с:'gimn-kluba',т:'Гимн футбольного клуба, написанный мировой кинокомпозиторской звездой',м:['спецпроект','креатив','продюсирование'],ф:'linear-gradient(120deg,#0e0e10,#4a4a52 70%,#1a1a1d)',р:'s8 tall'},
-  {с:'brending-kadrovogo-startapa',т:'Разработка брендинга и дизайн сайта для кадрового стартапа',м:['дизайн','брендинг','веб-дизайн'],ф:'linear-gradient(135deg,#5a4af0,#7b5cf0)',р:'s4 tall'},
-  {с:'zametki-osnovatelya',т:'Заметки основателя: как мы работаем с клиентом',м:['рельсы','маркетинг'],ф:'linear-gradient(160deg,#3b3b44,#86828c)',р:'s4'},
-  {с:'servisy-vdohnoveniya',т:'Собрали лучшие альтернативы популярным сервисам вдохновения',м:['пост','телеграм'],ф:'linear-gradient(160deg,#8d8d94,#2a2a30)',р:'s4'},
-  {с:'rabochie-tetradi',т:'Разработка серии рабочих тетрадей для образовательного проекта',м:['дизайн','брендинг','веб-дизайн'],ф:'linear-gradient(135deg,#17151d,#2c2937)',р:'s4'},
-
-  {с:'internet-magazin-odezhdy',т:'Редизайн интернет-магазина одежды',м:['дизайн','вёрстка'],ф:'linear-gradient(135deg,#0f3d3e,#2f8f83)',р:'s8'},
-  {с:'identika-kofeynya',т:'Айдентика для кофейни: от логотипа до упаковки',м:['брендинг','айдентика'],ф:'linear-gradient(135deg,#5b3a29,#d9a066)',р:'s4'},
-  {с:'kak-podgotovit-brief',т:'Как подготовить бриф, чтобы получить расчёт за день',м:['статья','полезное'],ф:'linear-gradient(160deg,#f3efe6,#cfc3a8)',свет:1,р:'s4 tall'},
-  {с:'dizayn-sistema-prilozheniya',т:'Дизайн-система для мобильного приложения службы доставки',м:['дизайн','приложения'],ф:'linear-gradient(135deg,#1c2b5a,#4f8cff)',р:'s8 tall'},
-  {с:'magazin-i-brending',т:'Разработка брендинга и дизайн интернет-магазина',м:['дизайн','вёрстка','дизайн-поддержка'],ф:'linear-gradient(135deg,#17151d,#17151d)',р:'s4'},
-  {с:'strategiya-v-sotsetyah',т:'Стратегия работы в социальных сетях для образовательной платформы',м:['дизайн','вёрстка','стратегия','маркетинг'],ф:'linear-gradient(135deg,#fcc93f,#ffd966)',свет:1,р:'s4'},
-  {с:'shablony-v-vebdizayne',т:'Преимущества и недостатки использования шаблонов в веб-дизайне',м:['статья','полезное'],ф:'linear-gradient(160deg,#fff,#b9a6ff 55%,#7b5cf0)',свет:1,р:'s4'}
+  {с:'maryjoy',тип:'кейсы',т:'maryjoy — дизайн платформы «белых» хакеров',ист:'под NDA',секрет:1,ф:'radial-gradient(120% 90% at 50% 100%,#6b2fe0,#1a0838 60%,#0b0418)'},
+  {с:'1',тип:'кейсы',т:"Chris Williams Art Gallery — сайт и награда на Behance",ист:'Behance',ссылка:'https://www.behance.net/oleg_nikolaev1',ф:'linear-gradient(135deg,#14121c,#4a3f8f)'},
+  {с:'2',тип:'кейсы',т:"LITT — интернет-магазин в Дубае",ист:'dprofile',ссылка:'https://dprofile.ru/case/191937/litt-ecommerce',ф:'linear-gradient(135deg,#0f3d3e,#2f8f83)'},
+  {с:'3',тип:'кейсы',т:"Atelier #40 — система для модного журнала в ОАЭ",ист:'dprofile',ссылка:'https://dprofile.ru/nikolaev_design1',ф:'linear-gradient(135deg,#3a2f2a,#b98e6a)'},
+  {с:'4',тип:'кейсы',т:"TUD — интернет-магазин",ист:'dprofile',ссылка:'https://dprofile.ru/nikolaev_design1',ф:'linear-gradient(135deg,#5a4af0,#7b5cf0)'},
+  {с:'5',тип:'кейсы',т:"pyn.ai — мобильное приложение",ист:'dprofile',ссылка:'https://dprofile.ru/nikolaev_design1',ф:'linear-gradient(135deg,#17151d,#2c2937)'},
+  {с:'6',тип:'кейсы',т:"Structura.agency — сайт компании",ист:'dprofile',ссылка:'https://dprofile.ru/nikolaev_design1',ф:'linear-gradient(135deg,#eaf6ff,#fff)',свет:1},
+  {с:'7',тип:'статьи',т:"Проекты, от которых я отказываюсь, и как говорю клиенту «нет»",ист:'dsgners',ссылка:'https://dsgners.ru/nikolaev_design/108384-proektyi-ot-kotoryih-ya-otkazyivayus-i-kak-govoryu-klientu-net',ф:'linear-gradient(120deg,#3a2f2a,#b98e6a 60%,#2a2320)'},
+  {с:'8',тип:'статьи',т:"Как найти первого зарубежного клиента без агентств и посредников",ист:'dsgners',ссылка:'https://dsgners.ru/nikolaev_design/51144-kak-nayti-pervogo-zarubejnogo-klienta-bez-agentstv-i-posrednikov',ф:'linear-gradient(160deg,#3b3b44,#86828c)'},
+  {с:'9',тип:'статьи',т:"Английский для дизайнера: как вести созвон с клиентом, если ты не носитель",ист:'dsgners',ссылка:'https://dsgners.ru/nikolaev_design/51334-angliyskiy-dlya-dizaynera-kak-vesti-sozvon-s-klientom-esli-tyi-ne-native',ф:'linear-gradient(135deg,#ece7ff,#fff)',свет:1},
+  {с:'10',тип:'статьи',т:"5 нейросетей для дизайна, кроме Midjourney и ChatGPT, которые я реально использую",ист:'dsgners',ссылка:'https://dsgners.ru/nikolaev_design/51009-5-neyrosetey-dlya-dizayna-krome-midjourney-i-chatgpt-kotoryie-ya-realno-ispolzuyu',ф:'linear-gradient(120deg,#0e0e10,#4a4a52 70%,#1a1a1d)'},
+  {с:'11',тип:'заметки',т:"Открыли консультации по дизайну с CEO",ист:'телеграм',ссылка:'https://t.me/design_budka',ф:'linear-gradient(160deg,#7b5cf0,#a592f5)'},
 ];
 window.СОЦСЕТИ = [
   {н:'dprofile',п:'Портфолио',с:'https://dprofile.ru/nikolaev_design1',внешняя:1},

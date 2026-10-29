@@ -40,8 +40,7 @@ em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--acce
 .nav{display:flex;gap:36px;font-size:14px}
 .nav a{position:relative;padding:4px 0}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.nav .sub{color:var(--mute);transition:color .25s}
-.nav a:hover .sub{color:inherit}
+.nav .nav-sub{color:var(--mute)}
 .nav a:hover::after{transform:scaleX(1)}
 .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);border-radius:999px;padding:10px 22px;font-size:13px;background:transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .15s}
 .btn:hover{background:var(--ink);color:#fff}
@@ -51,7 +50,7 @@ em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--acce
 .btn-accent:hover{background:#5f3fd8;border-color:#5f3fd8}
 .burger{display:none}
 *{outline:none}
-.hero-cta{display:flex;justify-content:center;margin-top:-20px}
+.hero-cta{display:flex;justify-content:center}
 
 
 /* точечная сетка с «водой»: точки рисует script.js на холсте; без скрипта остаётся статичная сетка */
@@ -68,6 +67,16 @@ h1,h2{font-weight:600;letter-spacing:-.03em;line-height:1.05}
 h1{font-size:clamp(40px,6.4vw,84px);text-align:center;padding:76px 0 56px}
 h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:clamp(36px,4.5vw,64px)}
 section{padding:clamp(72px,9vw,140px) 0}
+/* подзаголовки */
+.sub{font-size:clamp(15px,1.35vw,18px);line-height:1.5;font-weight:500;color:#625e70;max-width:640px}
+h1+.sub,h2+.sub{margin-top:16px}
+h2:has(+.sub){margin-bottom:0}
+section h2+.sub,.more-posts h2+.sub{margin-bottom:clamp(32px,4vw,56px)}
+.hero h1{padding-bottom:0}
+.hero .sub{text-align:center;margin:20px auto 0}
+.hero-cta{margin-top:32px}
+.page-title .sub{margin-top:16px}
+.modal-sub{font-size:14px;color:#625e70;margin:-12px 0 6px}
 
 /* клиенты */
 .clients{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 56px;padding:56px 0 clamp(64px,7vw,100px)}

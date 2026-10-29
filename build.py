@@ -30,7 +30,7 @@ HEAD='''<!doctype html>
 <header class="head"><div class="wrap">
   <a class="logo" href="/">ДОСКА</a>
   <nav class="nav">
-    <a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы <span class="sub">(dprofile)</span></a>
+    <a href="https://dprofile.ru/nikolaev_design1" target="_blank" rel="noopener">кейсы <span class="nav-sub">(dprofile)</span></a>
     <a href="/lenta">лента</a>
     <a href="/kontakty">контакты</a>
   </nav>
@@ -61,6 +61,7 @@ FOOT='''
     <form class="modal-form" id="форма-окна">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
       <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом <span class="emo" role="img" aria-label="знак мира" style="--r:8deg">✌️</span></h3>
+      <p class="modal-sub">Заполните форму — мы ответим и предложим следующий шаг.</p>
       <p class="tariff-chip" id="чип-тарифа" hidden></p>
       <input type="hidden" name="тариф" id="тариф-окна">
       <input name="имя" required placeholder="введите ваше имя" autocomplete="name">
@@ -110,6 +111,7 @@ INDEX='''
 <div class="wrap">
   <div class="hero dots">
   <h1>помогаем брендам<br>решать <em>дизайн-задачи</em></h1>
+  <p class="sub">Сайты, презентации, приложения и айдентика — делаем быстро, прозрачно и аккуратно.</p>
   <div class="hero-cta"><button class="btn btn-accent" type="button" data-order>оставить заявку</button></div>
   <div class="clients"><img src="/assets/clients/klient-1.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-2.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-3.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-4.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-5.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-6.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-7.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-8.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-9.png" alt="Логотип клиента" loading="eager"><img src="/assets/clients/klient-10.png" alt="Логотип клиента" loading="eager"></div>
   </div>
@@ -121,6 +123,7 @@ INDEX='''
 
   <section id="возможности" class="services dots">
     <h2>сайты, презентации,<br>приложения, брендинг<br><em>и многое другое..</em></h2>
+    <p class="sub">Всё, что нужно бренду для запуска и роста: от логотипа и лендинга до дизайн-системы.</p>
     <div class="cols">
       <div>лендинги<br>интернет-магазины<br>мобильные приложения<br>корпоративные сайты<br>дизайн-системы<br>А/Б-тестирование</div>
       <div>презентации<br>годовые отчёты<br>брошюры<br>шаблоны писем<br>руководства по стилю<br>рабочие тетради</div>
@@ -144,6 +147,7 @@ INDEX='''
 
   <section id="процесс">
     <h2>не изобретаем колесо.<br>работаем прозрачно<br><em>и без напрягов</em></h2>
+    <p class="sub">Понятные шаги, сроки и общение: вы всегда знаете, на каком мы этапе.</p>
     <div class="feat">
       <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></i><div><b>сначала идея</b><p>после понимания задачи переходим к дизайну</p></div></div>
       <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2v3l-4-3h-4a2 2 0 0 1-2-2"/></svg></i><div><b>всегда открыты к диалогу</b><p>внимательно прислушиваемся к вашим комментариям и пожеланиям</p></div></div>
@@ -167,6 +171,7 @@ INDEX='''
 
   <section id="тарифы-блок">
     <h2>тарифы <em>и направления</em></h2>
+    <p class="sub">Выберите направление и тариф: цена, состав работ и сроки — всё на одном экране.</p>
     <div class="tabs-row" role="tablist" aria-label="Направления"><div class="tabs" id="вкладки"></div><button class="tab support" id="поддержка" type="button" role="tab" aria-selected="false" tabindex="-1">Техническая поддержка</button></div>
     <div class="period-row" id="период" hidden><span class="period-l">оплата</span><div class="tabs" id="период-табы"></div><span class="period-note">за полгода на 15% дешевле, чем помесячно, а за год — ещё на 15% дешевле</span></div>
     <div class="plans" id="тарифы"></div>
@@ -179,7 +184,8 @@ INDEX='''
 '''
 LENTA='''
 <main><div class="wrap">
-  <div class="page-title"><h1>лента <em>материалов</em></h1></div>
+  <div class="page-title"><h1>лента <em>материалов</em></h1>
+    <p class="sub">Кейсы, статьи и заметки о том, как мы работаем и что узнаём по пути.</p></div>
   <div class="chips tabs" id="чипы"></div>
   <div class="grid" id="лента" data-всё="1"></div>
   <p style="margin:40px 0"><a class="btn" href="/">← на главную</a></p>
@@ -187,7 +193,8 @@ LENTA='''
 '''
 KONTAKTY='''
 <main><div class="wrap">
-  <div class="page-title"><h1>контакты <em>и соцсети</em></h1></div>
+  <div class="page-title"><h1>контакты <em>и соцсети</em></h1>
+    <p class="sub">Напишите нам или найдите в соцсетях — расскажем, как можем помочь.</p></div>
   <div class="contacts">
     <aside class="founder">
       <div class="avatar"><img src="/assets/founder.webp" alt="Фото основателя" width="900" height="965"></div>
@@ -213,13 +220,14 @@ POST='''
       <p>Когда появятся тексты и картинки, мы наполним эту страницу.</p>
     </div>
   </article>
-  <section class="more-posts"><h2>читайте <em>также</em></h2><div class="grid" id="ещё"></div></section>
+  <section class="more-posts"><h2>читайте <em>также</em></h2><p class="sub">Ещё материалы из ленты.</p><div class="grid" id="ещё"></div></section>
 </div></main>
 '''
 
 POLITIKA='''
 <main><div class="wrap doc">
-  <div class="page-title"><h1>политика <em>конфиденциальности</em></h1></div>
+  <div class="page-title"><h1>политика <em>конфиденциальности</em></h1>
+    <p class="sub">Как мы обрабатываем и защищаем ваши данные.</p></div>
   <p class="note">Это черновик-шаблон. Перед публикацией его должен проверить юрист, а поля в квадратных скобках нужно заполнить реальными данными оператора.</p>
   <p class="date">Редакция от [дата]</p>
 

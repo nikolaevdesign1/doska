@@ -124,7 +124,11 @@
     'Интернет-магазин':[
       ['Базовый','от 150 000 ₽','Магазин на готовой платформе',['Каталог и корзина','Онлайн-оплата','Адаптивный шаблон'],0],
       ['Стандарт','от 350 000 ₽','Магазин с авторским дизайном',['Уникальный дизайн','Фильтры и поиск','Интеграция с учётом','3 раунда правок'],1],
-      ['Кастом','по запросу','Магазин с нестандартной логикой',['Индивидуальная разработка','Интеграции с 1С и CRM','Сопровождение'],0]]
+      ['Кастом','по запросу','Магазин с нестандартной логикой',['Индивидуальная разработка','Интеграции с 1С и CRM','Сопровождение'],0]],
+    'Техническая поддержка':[
+      ['Базовый','от 15 000 ₽ / мес','Сайт всегда в рабочем состоянии',['Исправление ошибок','Обновления и резервные копии','Ответ в течение рабочего дня'],0],
+      ['Стандарт','от 40 000 ₽ / мес','Поддержка и небольшие доработки',['До 20 часов правок в месяц','Мониторинг работы сайта','Ответ в течение 4 часов','Ежемесячный отчёт'],1],
+      ['Кастом','по запросу','Поддержка под ваши требования',['Выделенный специалист','Работа по договору с гарантиями сроков','Развитие и новые функции'],0]]
   };
   const вкл=$('#вкладки'),пл=$('#тарифы');
   if(вкл){
@@ -139,33 +143,41 @@
       }));
       if(!анимировать)появление(пл);
     }
-    /* табы: общая дорожка и скользящий выбор */
+    /* табы: общая дорожка со скользящим выбором + отдельная кнопка «Техническая поддержка» */
+    const ключи=Object.keys(ТАРИФЫ);
     вкл.classList.add('seg');
     const ползунок=document.createElement('span');ползунок.className='seg-thumb';ползунок.setAttribute('aria-hidden','true');
     вкл.appendChild(ползунок);
     const табы=[];
+    const под=$('#поддержка');
+    const все=()=>[...табы,под];
     function поставить(){
-      const а=табы.find(e=>e.classList.contains('on'));if(!а)return;
+      const а=табы.find(e=>e.classList.contains('on'));
+      ползунок.classList.toggle('off',!а);
+      if(!а)return;
       ползунок.style.width=а.offsetWidth+'px';ползунок.style.transform='translateX('+а.offsetLeft+'px)';
     }
     function выбрать(t,к,фокус){
       if(t.classList.contains('on'))return;
-      табы.forEach(e=>{const on=e===t;e.classList.toggle('on',on);e.setAttribute('aria-selected',on);e.tabIndex=on?0:-1});
+      все().forEach(e=>{const on=e===t;e.classList.toggle('on',on);e.setAttribute('aria-selected',on);e.tabIndex=on?0:-1});
       поставить();if(фокус)t.focus();
-      t.scrollIntoView({block:'nearest',inline:'nearest',behavior:тихо?'auto':'smooth'});
+      if(t!==под)t.scrollIntoView({block:'nearest',inline:'nearest',behavior:тихо?'auto':'smooth'});
       сменить(пл,()=>тарифы(к,true));
     }
-    Object.keys(ТАРИФЫ).forEach((к,i)=>{
-      const t=document.createElement('button');t.type='button';t.className='tab'+(i?'':' on');t.textContent=к;
-      t.setAttribute('role','tab');t.setAttribute('aria-selected',i===0);t.tabIndex=i?-1:0;
-      t.onclick=()=>выбрать(t,к,false);
+    function клавиши(t){
       t.addEventListener('keydown',e=>{
         const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;
-        e.preventDefault();const j=(табы.indexOf(t)+d+табы.length)%табы.length;выбрать(табы[j],Object.keys(ТАРИФЫ)[j],true);
+        e.preventDefault();const л=все();const j=(л.indexOf(t)+d+л.length)%л.length;выбрать(л[j],ключи[j],true);
       });
+    }
+    ключи.slice(0,-1).forEach((к,i)=>{
+      const t=document.createElement('button');t.type='button';t.className='tab'+(i?'':' on');t.textContent=к;
+      t.setAttribute('role','tab');t.setAttribute('aria-selected',i===0);t.tabIndex=i?-1:0;
+      t.onclick=()=>выбрать(t,к,false);клавиши(t);
       табы.push(t);вкл.appendChild(t);
     });
-    вкл.setAttribute('aria-label','Направления');пл.setAttribute('role','tabpanel');
+    под.onclick=()=>выбрать(под,ключи[ключи.length-1],false);клавиши(под);
+    пл.setAttribute('role','tabpanel');
     тарифы(Object.keys(ТАРИФЫ)[0],false);
     поставить();addEventListener('resize',поставить);
     if(document.fonts&&document.fonts.ready)document.fonts.ready.then(поставить);

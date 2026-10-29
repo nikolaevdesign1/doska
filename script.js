@@ -13,7 +13,7 @@
   function появление(корень){
     if(!io){$$('.rv',корень).forEach(e=>e.classList.remove('rv'));return}
     const группы=new Map();
-    $$('h1,h2,.sub,.clients,.tile,.more,.cols>div,.lead2,.video,.ai-steps li,.f,.type,.step,.rev,.tabs,.plan,.row,.small,.founder,.menu-list a,.post-cover,.post-h,.post-text,.crumb,.lead,.top>div',корень).forEach(e=>{
+    $$('h1,h2,.sub,.clients,.tile,.more,.cols>div,.lead2,.video,.ai-steps li,.f,.type,.step,.rev,.week,.tabs,.plan,.row,.small,.founder,.menu-list a,.post-cover,.post-h,.post-text,.crumb,.lead,.top>div',корень).forEach(e=>{
       if(e.classList.contains('rv')||e.closest('.modal,.cookie,.head'))return;
       const п=e.parentElement;const i=группы.get(п)||0;группы.set(п,i+1);
       e.classList.add('rv');e.style.setProperty('--d',Math.min(i,6)*.07+'s');io.observe(e);

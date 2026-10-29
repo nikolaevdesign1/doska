@@ -53,19 +53,13 @@ em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--acce
 .hero-cta{display:flex;justify-content:center;margin-top:-20px}
 
 
-/* точечная сетка с еле заметной волной */
+/* точечная сетка с «водой»: точки рисует script.js на холсте; без скрипта остаётся статичная сетка */
 .dots{position:relative;isolation:isolate}
-.dots::before,.dots::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;margin-left:-50vw;z-index:-1;pointer-events:none;background-position:center top}
-.dots::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='2.5' fill='%23141224' fill-opacity='.045'/%3E%3C/svg%3E");
+.dots::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;margin-left:-50vw;z-index:-1;pointer-events:none;background-position:center top;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='11' cy='11' r='1.3' fill='%23141224' fill-opacity='.12'/%3E%3C/svg%3E");
   -webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
-.dots::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='3.2' fill='%237b5cf0' fill-opacity='.14'/%3E%3C/svg%3E");
-  -webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 50%,transparent 70%),linear-gradient(transparent,#000 14%,#000 86%,transparent);
-  mask-image:linear-gradient(100deg,transparent 30%,#000 50%,transparent 70%),linear-gradient(transparent,#000 14%,#000 86%,transparent);
-  -webkit-mask-size:260% 100%,100% 100%;mask-size:260% 100%,100% 100%;
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-  -webkit-mask-composite:source-in;mask-composite:intersect;
-  animation:dots-wave 14s linear infinite}
-@keyframes dots-wave{from{-webkit-mask-position:120% 0,0 0;mask-position:120% 0,0 0}to{-webkit-mask-position:-20% 0,0 0;mask-position:-20% 0,0 0}}
+.dots.has-canvas::before{display:none}
+.dots-bg{position:absolute;top:0;left:50%;width:100vw;height:100%;margin-left:-50vw;z-index:-1;pointer-events:none;display:block}
 .hero{padding:clamp(24px,4vw,64px) 0 clamp(24px,4vw,64px)}
 
 /* заголовки */
@@ -81,9 +75,9 @@ section{padding:clamp(72px,9vw,140px) 0}
 
 /* сетка кейсов */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-.tile{position:relative;border-radius:var(--r);overflow:hidden;min-height:280px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;min-height:336px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;isolation:isolate;transition:transform .35s var(--ease),box-shadow .35s}
 .tile.s4{grid-column:span 4}.tile.s5{grid-column:span 5}.tile.s7{grid-column:span 7}.tile.s8{grid-column:span 8}.tile.s3{grid-column:span 3}
-.tile.tall{min-height:440px}
+.tile.tall{min-height:528px}
 .tile::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--art,#333);transition:transform .6s var(--ease)}
 .tile:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(40,30,90,.18)}
 .tile:hover::before{transform:scale(1.05)}
@@ -282,8 +276,8 @@ select.cs{display:none}
   .nav,.head .btn:not(.burger){display:none}
   .burger{display:inline-flex}
   .nav.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px;gap:16px;animation:pop .3s var(--ease)}
-  .tile,.tile.s3,.tile.s4,.tile.s5,.tile.s7,.tile.s8{grid-column:span 12;min-height:240px}
-  .tile.tall{min-height:320px}
+  .tile,.tile.s3,.tile.s4,.tile.s5,.tile.s7,.tile.s8{grid-column:span 12;min-height:288px}
+  .tile.tall{min-height:384px}
   .cols,.feat,.types,.plans,.ai-grid,.contacts{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
   .row{flex-direction:column;gap:6px;align-items:stretch}

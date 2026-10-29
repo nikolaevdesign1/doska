@@ -266,5 +266,54 @@
     });
   }
 
+  /* ---------- точки-«вода» на фоне ---------- */
+  $$('.dots').forEach(блок=>{
+    const cv=document.createElement('canvas');cv.className='dots-bg';cv.setAttribute('aria-hidden','true');
+    const g=cv.getContext&&cv.getContext('2d');if(!g)return;
+    блок.prepend(cv);блок.classList.add('has-canvas');
+    const ШАГ=22,R=1.25,УР=14;
+    const палитра=[];
+    for(let i=0;i<=УР;i++){const k=i/УР;
+      palitraPush(k)}
+    function palitraPush(k){
+      const r=Math.round(20+(123-20)*k),gg=Math.round(18+(92-18)*k),b=Math.round(36+(240-36)*k),a=.13+.27*k;
+      палитра.push('rgba('+r+','+gg+','+b+','+a.toFixed(3)+')');
+    }
+    let W=0,H=0,вид=false,идёт=false,прош=0;
+    function размер(){
+      const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);
+      W=r.width;H=r.height;cv.width=Math.round(W*d);cv.height=Math.round(H*d);g.setTransform(d,0,0,d,0,0);
+    }
+    function рисовать(t){
+      g.clearRect(0,0,W,H);
+      const T=t/1000,cols=Math.ceil(W/ШАГ)+1,rows=Math.ceil(H/ШАГ),ox=(W%ШАГ)/2;
+      for(let j=0;j<rows;j++){
+        const y0=j*ШАГ+ШАГ/2,fy=y0/H,кр=Math.min(1,fy/.14,(1-fy)/.14);
+        if(кр<=0)continue;
+        g.globalAlpha=кр;
+        for(let i=0;i<cols;i++){
+          const x0=ox+i*ШАГ;
+          const h=(Math.sin(x0*.011+T*.9)+Math.sin(y0*.015-T*.7+x0*.004)+Math.sin((x0+y0)*.007+T*.55))/3;
+          const k=Math.pow((h+1)/2,1.5);
+          g.fillStyle=палитра[Math.round(k*УР)];
+          g.beginPath();g.arc(x0+Math.cos(x0*.011+T*.9)*1.6,y0+h*3.4,R*(.7+k*1.1),0,6.2832);g.fill();
+        }
+      }
+      g.globalAlpha=1;
+    }
+    function цикл(t){
+      if(!вид){идёт=false;return}
+      if(t-прош>32){прош=t;рисовать(t)}
+      requestAnimationFrame(цикл);
+    }
+    размер();рисовать(2500);
+    if(тихо||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(es=>{
+      вид=es[0].isIntersecting;
+      if(вид&&!идёт){идёт=true;requestAnimationFrame(цикл)}
+    }).observe(блок);
+    let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{размер();рисовать(performance.now())},120)});
+  });
+
   появление(document);
 })();

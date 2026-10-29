@@ -137,7 +137,7 @@ section{padding:clamp(72px,9vw,140px) 0}
 .tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .tabs-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 16px;margin-bottom:24px}
 .tabs-row .tabs{margin:0}
-.tab.support{padding:15px 26px;font-size:14px}
+.tab.support{padding:15px 26px;font-size:14px;border:0}
 .seg-thumb.off{opacity:0}
 .tabs.seg{position:relative;display:inline-flex;max-width:100%;overflow-x:auto;scrollbar-width:none;background:#ebeaf0;padding:5px;border-radius:999px;gap:4px}
 .tabs.seg::-webkit-scrollbar{display:none}

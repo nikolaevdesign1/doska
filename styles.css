@@ -40,6 +40,8 @@ em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--acce
 .nav a{position:relative;padding:4px 0}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav a:hover{color:var(--accent)}
+.nav .sub{color:var(--mute);transition:color .25s}
+.nav a:hover .sub{color:inherit}
 .nav a:hover::after{transform:scaleX(1)}
 .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);border-radius:999px;padding:10px 22px;font-size:13px;background:transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .15s}
 .btn:hover{background:var(--ink);color:#fff}
@@ -173,7 +175,8 @@ select.cs{display:none}
 .sel li[aria-selected=true]::after{content:"✓"}
 
 /* подвал */
-.foot{position:relative;z-index:2;margin-top:-64px;background-color:#efeff1;border-radius:64px 64px 0 0;padding:64px 0 0;overflow:hidden}
+.foot{position:relative;z-index:2;margin-top:clamp(60px,8vw,120px);background-color:#efeff1;border-radius:64px 64px 0 0;padding:64px 0 0;overflow:hidden}
+.foot.lap{margin-top:-64px}
 .foot::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
 .foot .wrap{position:relative}
 .foot .top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
@@ -185,7 +188,9 @@ select.cs{display:none}
 .foot ul.arrows{color:var(--ink)}
 .foot ul.arrows li::before{content:"→";color:var(--accent);margin-right:10px}
 .big{font-weight:700;color:#e0dfe6;font-size:clamp(70px,17vw,260px);line-height:.85;margin:50px 0 -.12em;display:block;text-align:center;letter-spacing:.01em;transform-origin:bottom center}
-.bottom{position:relative;display:flex;justify-content:space-between;font-size:12px;padding:16px 0 20px;background:#efeff1;z-index:1}
+.bottom{position:relative;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:12px;padding:16px 0 20px;z-index:1}
+.bottom .links{display:flex;gap:28px;flex-wrap:wrap}
+.bottom a:hover{color:var(--accent)}
 
 /* куки */
 .cookie{position:fixed;right:24px;bottom:24px;z-index:50;background:var(--card);box-shadow:0 16px 50px rgba(0,0,0,.16);border-radius:40px;padding:32px 34px;width:min(440px,calc(100% - 32px));display:grid;gap:26px;animation:pop .5s var(--ease) .6s both}
@@ -221,6 +226,16 @@ select.cs{display:none}
 .post-h{text-align:left;padding:18px 0 24px;font-size:clamp(30px,4.4vw,56px);max-width:900px}
 .post-text{max-width:720px;font-size:17px;line-height:1.65;display:grid;gap:16px;color:#3b3849}
 .more-posts{padding-top:90px}
+
+/* страница документа (политика) */
+.doc{max-width:780px;padding-bottom:40px}
+.doc h2{font-size:clamp(22px,2.4vw,30px);margin:48px 0 16px;letter-spacing:-.02em}
+.doc p,.doc li{font-size:16px;line-height:1.7;color:#3b3849}
+.doc p{margin-bottom:14px}
+.doc ul{margin:0 0 14px;padding-left:22px;display:grid;gap:6px}
+.doc .note{background:var(--accent-soft);color:#3b2f87;border-radius:var(--r);padding:16px 20px;font-size:14px;line-height:1.55;margin:0 0 8px}
+.doc .date{color:var(--mute);font-size:14px}
+.doc a{color:var(--accent);text-decoration:underline}
 
 /* контакты */
 .contacts{display:grid;grid-template-columns:380px 1fr;gap:40px;padding-bottom:80px;align-items:start}

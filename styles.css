@@ -56,8 +56,9 @@ h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:36px}
 section{padding:64px 0}
 
 /* клиенты */
-.clients{display:flex;flex-wrap:wrap;justify-content:center;gap:34px 52px;padding:20px 0 70px}
-.clients span{width:96px;height:34px;border-radius:10px;background:#dcdbe2;opacity:.7}
+.clients{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 64px;padding:20px 0 70px}
+.clients img{height:48px;width:auto;max-width:150px;object-fit:contain;opacity:.75;transition:opacity .3s,transform .35s var(--ease)}
+.clients img:hover{opacity:1;transform:scale(1.06)}
 
 /* сетка кейсов */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}

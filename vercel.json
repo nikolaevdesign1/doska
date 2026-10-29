@@ -2,5 +2,10 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/lenta/:slug", "destination": "/post" }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "claude/*": false
+    }
+  }
 }

@@ -151,10 +151,12 @@ INDEX='''
       <select class="cs" id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
     <div class="row"><label>планируем заложить на проект</label>
       <select class="cs"><option>до 100 000 ₽</option><option>100 000 – 300 000 ₽</option><option>300 000 – 700 000 ₽</option><option>более 700 000 ₽</option><option>пока не знаем</option></select></div>
-    <div class="row"><label>вкратце у нас следующая задача</label><textarea rows="2" placeholder="опишите, что необходимо сделать, на звонке всё обсудим подробнее"></textarea></div>
+    <div class="row"><label>вкратце у нас следующая задача</label><textarea rows="1" placeholder="опишите, что необходимо сделать, на звонке всё обсудим подробнее"></textarea></div>
     <div class="row"><label>ответ можно прислать сюда</label><input required placeholder="тут может быть ваша почта или телеграм / вотсап"></div>
-    <p class="small">Отправляя форму, вы даёте согласие с <a href="#">Политикой обработки персональных данных</a></p>
-    <div><button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость</button></div>
+    <div class="form-foot">
+      <p class="small">Отправляя форму, вы даёте согласие<br>с <a href="#">Политикой обработки персональных данных</a></p>
+      <button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость</button>
+    </div>
     <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
   </form>
 </div></section>

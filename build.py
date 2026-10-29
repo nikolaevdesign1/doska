@@ -60,18 +60,18 @@ FOOT='''
     <div class="modal-art" aria-hidden="true"></div>
     <form class="modal-form" id="форма-окна">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
-      <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом</h3>
+      <h3 id="окно-заголовок">расскажите о задаче — вернёмся с расчётом <span class="emo" role="img" aria-label="знак мира" style="--r:8deg">✌️</span></h3>
       <input name="имя" required placeholder="введите ваше имя" autocomplete="name">
       <input name="связь" required placeholder="почта или телеграм">
       <textarea name="задача" rows="2" placeholder="коротко опишите задачу"></textarea>
       <label class="attach"><input type="file" name="файл"><span class="attach-t">прикрепить файл</span></label>
       <div><button class="btn btn-accent" type="submit">отправить</button></div>
-      <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+      <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время. <span class="emo" role="img" aria-label="поднятые руки" style="--r:-8deg">🙌</span></p>
     </form>
   </div>
 </div>
 
-<div class="cookie"><p>Мы используем файлы куки, чтобы улучшить работу сайта. Продолжая использовать этот сайт, вы соглашаетесь с использованием куки-файлов.</p><button class="btn" type="button">согласен(а)</button></div>
+<div class="cookie"><p>Мы используем файлы куки, чтобы улучшить работу сайта. Продолжая использовать этот сайт, вы соглашаетесь с использованием куки-файлов. <span class="emo" role="img" aria-label="печенье" style="--r:-12deg">🍪</span></p><button class="btn" type="button">согласен(а)</button></div>
 <script src="/data.js"></script>
 <script src="/script.js"></script>
 </body></html>
@@ -85,7 +85,7 @@ def page(path,title,desc,body):
 D='ДОСКА — агентство: помогаем брендам решать дизайн-задачи. Сайты, презентации, приложения, брендинг.'
 FORM='''<section class="form" id="заявка"><div class="wrap">
   <form id="форма">
-    <div class="row"><label>привет! меня зовут</label><input required placeholder="введите ваше имя"></div>
+    <div class="row"><label>привет! <span class="emo" role="img" aria-label="приветствие" style="--r:-14deg">👋</span> меня зовут</label><input required placeholder="введите ваше имя"></div>
     <div class="row"><label>хотелось бы заказать у вас</label>
       <select class="cs" id="услуга"><option>Логотип / айдентика</option><option>Лендинг</option><option>Корпоративный сайт</option><option>Интернет-магазин</option><option>Другое</option></select></div>
     <div class="row"><label>планируем заложить на проект</label>
@@ -96,7 +96,7 @@ FORM='''<section class="form" id="заявка"><div class="wrap">
       <p class="small">Отправляя форму, вы даёте согласие<br>с <a href="/politika">Политикой обработки персональных данных</a></p>
       <button class="btn btn-accent" type="submit">отправить заявку и узнать стоимость</button>
     </div>
-    <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+    <p class="ok">Спасибо! Мы свяжемся с вами в ближайшее время. <span class="emo" role="img" aria-label="поднятые руки" style="--r:10deg">🙌</span></p>
   </form>
 </div></section>
 '''
@@ -109,7 +109,7 @@ INDEX='''
 
   <section id="кейсы" style="padding-top:0">
     <div class="grid" id="лента"></div>
-    <div class="more"><span>Сделаем так же и ещё круче</span><a class="btn btn-accent" href="/lenta">вся лента</a></div>
+    <div class="more"><span>Сделаем так же и ещё круче <span class="emo" role="img" aria-label="очки" style="--r:-6deg">😎</span></span><a class="btn btn-accent" href="/lenta">вся лента</a></div>
   </section>
 
   <section id="возможности" class="services">
@@ -123,7 +123,7 @@ INDEX='''
 
   <section id="ии" class="ai">
     <h2>работаем через ИИ-интеграции<br><em>и собираем быстрее</em></h2>
-    <p class="lead2">Мы построили ИИ-систему, которая берёт на себя рутину: разбирает бриф, собирает черновики и подготавливает материалы. Дизайнеры тратят время на идею и качество, а вы получаете результат заметно быстрее.</p>
+    <p class="lead2">Мы построили ИИ-систему, которая берёт на себя рутину: разбирает бриф, собирает черновики и подготавливает материалы. Дизайнеры тратят время на идею и качество, а вы получаете результат заметно быстрее <span class="emo" role="img" aria-label="ракета" style="--r:8deg">🚀</span></p>
     <div class="ai-grid">
       <div class="video" role="img" aria-label="Место под видео о работе ИИ-системы"><span>видео о том, как работает система, появится здесь</span></div>
       <ol class="ai-steps">
@@ -140,14 +140,14 @@ INDEX='''
     <div class="feat">
       <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></i><div><b>сначала идея</b><p>после понимания задачи переходим к дизайну</p></div></div>
       <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h11a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2v3l-4-3h-4a2 2 0 0 1-2-2"/></svg></i><div><b>всегда открыты к диалогу</b><p>внимательно прислушиваемся к вашим комментариям и пожеланиям</p></div></div>
-      <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></i><div><b>помним про дедлайн</b><p>высылаем готовый продукт заранее, оставляем время на правки</p></div></div>
+      <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></i><div><b>помним про дедлайн</b><p>высылаем готовый продукт заранее, оставляем время на правки <span class="emo" role="img" aria-label="будильник" style="--r:10deg">⏰</span></p></div></div>
       <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></i><div><b>работаем прозрачно</b><p>можем предоставить доступ к проектам</p></div></div>
-      <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><div><b>всегда на связи</b><p>не пропадаем с радаров, никогда</p></div></div>
+      <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><div><b>всегда на связи</b><p>не пропадаем с радаров, никогда <span class="emo" role="img" aria-label="антенна" style="--r:-10deg">📡</span></p></div></div>
       <div class="f"><i aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14.5a5 5 0 0 0 8 0M9 9.5h.01M15 9.5h.01"/></svg></i><div><b>понимаем границы возможностей</b><p>берём столько проектов, сколько осилим, мы ценим качество</p></div></div>
     </div>
     <div class="types">
       <div class="type"><div><span class="pill">не срочно</span><b>Большой проект</b><p>Поможем сформулировать ключевые тезисы и получить на выходе стильный продукт</p></div><img src="/assets/illustrations/bolshoy-proekt.png" alt="Календарь большого проекта"></div>
-      <div class="type"><div><span class="pill g">срочно</span><b>Срочный проект</b><p>Быстро соберём шаблонный вариант в корпоративных цветах за 24 часа</p></div><img src="/assets/illustrations/srochnyy-proekt.png" alt="Срочный проект: календарь с увеличенной датой"></div>
+      <div class="type"><div><span class="pill g">срочно</span><b>Срочный проект</b><p>Быстро соберём шаблонный вариант в корпоративных цветах за 24 часа <span class="emo" role="img" aria-label="молния" style="--r:6deg">⚡</span></p></div><img src="/assets/illustrations/srochnyy-proekt.png" alt="Срочный проект: календарь с увеличенной датой"></div>
     </div>
     <div class="steps" style="margin-top:32px">
       <div class="step"><span>(01)</span>Разбираемся в задаче</div>

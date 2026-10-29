@@ -170,6 +170,7 @@ INDEX='''
     <div class="tabs-row" role="tablist" aria-label="Направления"><div class="tabs" id="вкладки"></div><button class="tab support" id="поддержка" type="button" role="tab" aria-selected="false" tabindex="-1">Техническая поддержка</button></div>
     <div class="period-row" id="период" hidden><span class="period-l">оплата</span><div class="tabs" id="период-табы"></div><span class="period-note">за полгода на 15% дешевле, чем помесячно, а за год — ещё на 15% дешевле</span></div>
     <div class="plans" id="тарифы"></div>
+    <p class="support-note" id="поддержка-инфо" hidden>Техническая поддержка работает на <b>uixcorp.support</b></p>
     <p class="partner">Являемся партнёрами <img src="/assets/beget.png" alt="Beget" width="260" height="121"></p>
   </section>
 </div>

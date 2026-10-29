@@ -158,6 +158,7 @@
   if(вкл){
     function тарифы(к,анимировать){
       текущий=к;
+      const инфо=$('#поддержка-инфо');if(инфо)инфо.hidden=к!==КП;
       if(пер){const показ=к===КП;if(показ&&пер.hidden&&!тихо){пер.classList.remove('show');void пер.offsetWidth;пер.classList.add('show')}пер.hidden=!показ}
       const спис=ТАРИФЫ[к];
       пл.classList.toggle('one',спис.length===1);

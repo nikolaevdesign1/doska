@@ -88,7 +88,7 @@ INDEX='''
 
   <section id="кейсы" style="padding-top:0">
     <div class="grid" id="лента"></div>
-    <div class="more"><span>Сделаем так же и ещё круче</span><a class="btn" href="/lenta">вся лента</a></div>
+    <div class="more"><span>Сделаем так же и ещё круче</span><a class="btn btn-accent" href="/lenta">вся лента</a></div>
   </section>
 
   <section id="возможности" class="services">

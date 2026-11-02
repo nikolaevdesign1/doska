@@ -63,37 +63,12 @@
     b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true"><path d="'+p+'Z"/><circle cx="19" cy="80" r="2.6" class="hole"/></svg><span class="bt"><small>'+(н.п||'')+'</small><b>'+н.т+'</b>'+(н.г?'<small>'+н.г+'</small>':'')+'</span>';
     return b;
   }
-  /* Раскладка по рядам, чтобы плитки не растягивались: ряды по 12 колонок, без одиноких плиток */
-  const РЯДЫ=[[8,4],[4,4,4],[4,8],[4,4,4]];
-  function рядыКейсов(n){
-    const ряды=[];let осталось=n,k=0;
-    while(осталось>0){
-      const р=РЯДЫ[k%РЯДЫ.length];
-      if(осталось>=р.length){ряды.push([...р]);осталось-=р.length;k++}
-      else if(осталось===2){ряды.push([6,6]);осталось=0}
-      else{
-        const пред=ряды.pop();
-        if(!пред){ряды.push([12]);break}
-        if(пред.length===2){ряды.push([4,4,4])}else{ряды.push([6,6],[6,6])}
-        осталось=0;
-      }
-    }
-    return ряды.flat();
-  }
-  /* Статьи и заметки – обложки 16:9: ряды по два, нечетный остаток – ряд из трех */
-  function рядыОбложек(n){
+  /* Раскладка: ряды по две плитки (6 колонок), при нечетном числе последний ряд из трех (4 колонки); все плитки 16:9 */
+  function размеры(список){
+    const n=список.length;
     if(n===1)return[6];
     if(n%2===0)return Array(n).fill(6);
     return[...Array(n-3).fill(6),4,4,4];
-  }
-  function размеры(список){
-    const р=[];let i=0;
-    while(i<список.length){
-      const кейс=список[i].тип==='кейсы';let j=i;
-      while(j<список.length&&(список[j].тип==='кейсы')===кейс)j++;
-      р.push(...(кейс?рядыКейсов(j-i):рядыОбложек(j-i)));i=j;
-    }
-    return р;
   }
   const узкий=matchMedia('(max-width:640px)').matches;
   const следить=!тихо&&'IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{
@@ -102,7 +77,7 @@
   function плитка(x,анимировать,i,ширина){
     const секрет=!!x.секрет;
     const a=document.createElement(секрет?'div':'a');
-    a.className='tile s'+ширина+(x.свет?' light':'')+(секрет?' secret':'')+(x.обложка?' cover':'')+(x.тип==='кейсы'?'':' wide')+((x.картинка||x.видео)?' img':'');
+    a.className='tile s'+ширина+(x.свет?' light':'')+(секрет?' secret':'')+(x.обложка?' cover':'')+((x.картинка||x.видео)?' img':'');
     if(!секрет){a.href=x.ссылка;a.target='_blank';a.rel='noopener'}
     if(x.картинка&&!x.видео)a.style.setProperty('--art','url('+x.картинка+') center/cover no-repeat');
     else if(x.видео)a.style.setProperty('--art','url('+x.постер+') center/cover no-repeat');
@@ -133,7 +108,7 @@
   const лента=$('#лента');
   if(лента){
     const все=лента.dataset.все==='1';
-    вывестиПлитки(лента,все?window.ЛЕНТА:window.ЛЕНТА.slice(0,6),false);
+    вывестиПлитки(лента,все?window.ЛЕНТА:window.ЛЕНТА.filter(x=>x.тип==='кейсы').slice(0,6),false);
   }
   const чипы=$('#чипы');
   if(чипы){
@@ -225,7 +200,6 @@
     function тарифы(к,анимировать){
       текущий=к;
       const инфо=$('#поддержка-инфо');if(инфо)инфо.hidden=к!==КП;
-      const проц=$('#процесс-лендинг');if(проц)проц.hidden=к!=='Лендинг';
       if(пер){const показ=к===КП;if(показ&&пер.hidden&&!тихо){пер.classList.remove('show');void пер.offsetWidth;пер.classList.add('show')}пер.hidden=!показ}
       const спис=ТАРИФЫ[к];
       пл.classList.toggle('one',спис.length===1);
@@ -375,11 +349,13 @@
 
   /* ---------- куки ---------- */
   const к=$('.cookie');
+  const сдвигЧата=()=>document.documentElement.style.setProperty('--ck',к&&document.body.contains(к)?(к.offsetHeight+48)+'px':'0px');
   if(к){
     try{if(localStorage.getItem('куки'))к.remove()}catch(e){}
+    сдвигЧата();addEventListener('resize',сдвигЧата);
     $('button',к)&&$('button',к).addEventListener('click',()=>{
       try{localStorage.setItem('куки','1')}catch(e){}
-      к.classList.add('gone');setTimeout(()=>к.remove(),300);
+      к.classList.add('gone');setTimeout(()=>{к.remove();сдвигЧата()},300);
     });
   }
 

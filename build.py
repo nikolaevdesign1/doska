@@ -197,7 +197,7 @@ INDEX='''
     <div class="period-row" id="период" hidden><span class="period-l">оплата</span><div class="tabs" id="период-табы"></div><span class="period-note">за полгода на 15% дешевле, чем помесячно, а за год – еще на 15% дешевле</span></div>
     <div class="plans" id="тарифы"></div>
     <p class="support-note" id="поддержка-инфо" hidden>Техническая поддержка работает на <b>uixcorp.support</b></p>
-    <p class="partner">Являемся партнерами <img src="/assets/beget.png" alt="Beget" width="260" height="121"></p>
+    <p class="partner">Являемся партнерами <b>рег.ру</b></p>
   </section>
 </div>
 

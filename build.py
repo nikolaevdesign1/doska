@@ -409,4 +409,5 @@ w('post.html',page('/lenta','Материал — ДОСКА','Материал�
 w('rekvizity/index.html',page('/rekvizity','Реквизиты — ДОСКА','Реквизиты индивидуального предпринимателя.',REKVIZITY))
 w('usloviya/index.html',page('/usloviya','Условия оплаты, доставки и возврата — ДОСКА','Как оплатить услуги, получить результат и вернуть деньги.',USLOVIYA))
 w('podderzhka/index.html',page('/podderzhka','Поддержка — ДОСКА','доска.поддержка: сервис технической поддержки сайтов, серверы в России.',PODD.replace('{{FORM}}',FORM)))
+w('404.html',page('/404','Страница не найдена — ДОСКА','Такой страницы нет.','<main><div class="wrap"><div class="page-title"><h1>страница <em>не найдена</em></h1><p class="sub">Возможно, ссылка устарела. Вернитесь на <a class="u" href="/">главную</a> или загляните в <a class="u" href="/lenta">ленту</a>.</p></div></div></main>'))
 w('politika/index.html',page('/politika','Политика конфиденциальности — ДОСКА','Как мы обрабатываем и защищаем персональные данные.',POLITIKA))

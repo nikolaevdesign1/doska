@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://doska.agency/sitemap.xml

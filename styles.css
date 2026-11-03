@@ -638,3 +638,9 @@ select.cs{display:none}
 /* ---------- широкие мониторы (21:9 и шире): контейнер растет, чтобы страница не стояла узкой колонкой ---------- */
 @media(min-width:1700px){.wrap{max-width:1560px}}
 @media(min-width:2200px){.wrap{max-width:1900px}}
+
+/* ---------- тарифы поддержки: плашки экономии ---------- */
+.plan .save{align-self:flex-start;display:inline-flex;margin-top:-6px;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.01em}
+.plan .save.hint{background:#f2f1f6;color:var(--mute);font-weight:600}
+.tab .tb{margin-left:6px;font-size:11px;font-weight:800;color:var(--accent);transition:color .3s}
+.tab.on .tb{color:#cbbfff}

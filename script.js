@@ -194,11 +194,17 @@
     const м=Math.round(ц.p6/.85/100)*100,г=Math.round(ц.p6*.85/100)*100;
     const мес=период==='месяц'?м:период==='год'?г:ц.p6;
     const мн=период==='год'?12:6,итог=период==='месяц'?null:мес*мн;
+    /* экономия относительно помесячной оплаты: в процентах и в рублях за весь период */
+    const проц=период==='месяц'?0:Math.round((1-мес/м)*100),руб=период==='месяц'?0:(м-мес)*мн;
     return {
       главная:(ц.от?'от ':'')+деньги(мес)+' / мес',
-      доп:итог?'Оплата '+ПЕРИОДЫ[период]+': '+(ц.от?'от ':'')+деньги(итог)+' единым платежом':'Оплата помесячно'
+      доп:итог?'Оплата '+ПЕРИОДЫ[период]+': '+(ц.от?'от ':'')+деньги(итог)+' единым платежом':'Оплата помесячно',
+      экон:проц?'Экономия '+проц+'% · '+(ц.от?'от ':'')+деньги(руб)+' '+ПЕРИОДЫ[период]:'',
+      подсказка:период==='месяц'?'За год дешевле на '+Math.round((1-г/м)*100)+'%':''
     };
   }
+  /* подпись вкладки периода: название и выгода, если есть */
+  const скидка=п=>п==='месяц'?'':'<small class="tb">−'+(п==='год'?28:15)+'%</small>';
   const вкл=$('#вкладки'),пл=$('#тарифы'),пер=$('#период'),перТ=$('#период-табы');
   if(вкл){
     function тарифы(к,анимировать){
@@ -259,7 +265,7 @@
       const пк=[];
       const пост=()=>{const а=пк.find(e=>e.classList.contains('on'));if(!а||!а.offsetWidth)return;пт.style.width=а.offsetWidth+'px';пт.style.transform='translateX('+а.offsetLeft+'px)'};
       Object.keys(ПЕРИОДЫ).forEach(п=>{
-        const t=document.createElement('button');t.type='button';t.className='tab'+(п===период?' on':'');t.innerHTML='<span class="t">'+п+'</span>';
+        const t=document.createElement('button');t.type='button';t.className='tab'+(п===период?' on':'');t.innerHTML='<span class="t">'+п+скидка(п)+'</span>';
         t.setAttribute('role','tab');t.setAttribute('aria-selected',п===период);
         t.onclick=()=>{
           if(п===период)return;
@@ -420,7 +426,7 @@
   if(плП&&перП){
     const вывести=()=>{
       плП.innerHTML=ТАРИФЫ[КП].map(t=>{const ц=цена(t[1]);
-        return '<div class="plan'+(t[4]?' hit':'')+'"><h3>'+t[0]+(t[4]?'<small>'+(t[4]===1?'популярный':t[4])+'</small>':'')+'</h3><div class="price">'+ц.главная+'</div><p class="period">'+ц.доп+'</p><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li'+(/^Не входят?/.test(y)?' class="no"':'')+'>'+y+'</li>').join('')+'</ul><button type="button" class="btn '+(t[4]?'btn-accent':'')+'" data-н="'+t[0]+'">подключить поддержку</button></div>'}).join('');
+        return '<div class="plan'+(t[4]?' hit':'')+'"><h3>'+t[0]+(t[4]?'<small>'+(t[4]===1?'популярный':t[4])+'</small>':'')+'</h3><div class="price">'+ц.главная+'</div>'+(ц.экон?'<span class="save">'+ц.экон+'</span>':ц.подсказка?'<span class="save hint">'+ц.подсказка+'</span>':'')+'<p class="period">'+ц.доп+'</p><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li'+(/^Не входят?/.test(y)?' class="no"':'')+'>'+y+'</li>').join('')+'</ul><button type="button" class="btn '+(t[4]?'btn-accent':'')+'" data-н="'+t[0]+'">подключить поддержку</button></div>'}).join('');
       $$('.plan .btn',плП).forEach(b=>b.addEventListener('click',()=>{
         if(window.открытьЗаказ)window.открытьЗаказ({тариф:КП+' · '+b.dataset.н+' · оплата '+ПЕРИОДЫ[период],тема:'Техническая поддержка'});
       }));
@@ -430,7 +436,7 @@
     const пк=[];
     const пост=()=>{const а=пк.find(e=>e.classList.contains('on'));if(!а||!а.offsetWidth)return;пт.style.width=а.offsetWidth+'px';пт.style.transform='translateX('+а.offsetLeft+'px)'};
     Object.keys(ПЕРИОДЫ).forEach(п=>{
-      const t=document.createElement('button');t.type='button';t.className='tab'+(п===период?' on':'');t.innerHTML='<span class="t">'+п+'</span>';
+      const t=document.createElement('button');t.type='button';t.className='tab'+(п===период?' on':'');t.innerHTML='<span class="t">'+п+скидка(п)+'</span>';
       t.onclick=()=>{
         if(п===период)return;
         период=п;пк.forEach(e=>e.classList.toggle('on',e===t));пост();

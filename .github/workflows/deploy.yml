@@ -1,0 +1,55 @@
+# Автовыкат сайта на хостинг по FTP: при слиянии в main файлы сами загружаются на хостинг.
+# Ветки sprint-* сюда не попадают: они публикуются только как предпросмотр на сервере поддержки.
+# Секреты репозитория (Settings → Secrets and variables → Actions): FTP_SERVER, FTP_USER, FTP_PASSWORD, FTP_DIR.
+#   FTP_DIR это папка сайта на хостинге со слэшем на конце, например  doskaagency.ru/www/
+# Первый запуск можно сделать кнопкой: вкладка Actions → «Выкат на хостинг» → Run workflow.
+name: Выкат на хостинг
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Проверка секретов
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+        run: |
+          for v in FTP_SERVER FTP_USER FTP_PASSWORD FTP_DIR; do
+            if [ -z "${!v}" ]; then echo "::error::Не задан секрет $v (Settings → Secrets and variables → Actions)"; exit 1; fi
+          done
+
+      # Режим правок открывается на /support: это копия главной страницы, обновляем ее вместе с сайтом.
+      - name: Страница /support
+        run: mkdir -p support && cp index.html support/index.html
+
+      - name: Загрузка на хостинг
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          protocol: ftps
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            build.py
+            vercel.json
+            serve.json
+            .vercelignore
+            ПРАВКИ.md
+            **/*-original.*

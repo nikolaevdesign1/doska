@@ -634,3 +634,7 @@ select.cs{display:none}
   .services .cols:not(.open)>div:nth-child(n+2){display:none}
   .more-btn{display:inline-flex}
 }
+
+/* ---------- широкие мониторы (21:9 и шире): контейнер растет, чтобы страница не стояла узкой колонкой ---------- */
+@media(min-width:1700px){.wrap{max-width:1560px}}
+@media(min-width:2200px){.wrap{max-width:1900px}}

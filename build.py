@@ -60,7 +60,7 @@ FOOT='''
     </div>
   </div>
   <div class="big" aria-hidden="true">ДОСКА</div>
-  <div class="bottom"><span>© ДОСКА, все права защищены</span><span class="links"><a class="u" href="/politika">политика конфиденциальности</a><a class="u" href="/usloviya">оплата, доставка и возврат</a><a class="u" href="/rekvizity">реквизиты</a></span></div>
+  <div class="bottom"><span>© ДОСКА, все права защищены</span><span class="links"><a class="u" href="/politika">политика конфиденциальности</a><a class="u" href="/usloviya">оплата, доставка и возврат</a><a class="u" href="/rekvizity">реквизиты</a><a class="u" href="/dokumenty">документы</a></span></div>
 </div></footer>
 
 <div class="modal" id="окно" role="dialog" aria-modal="true" aria-labelledby="окно-заголовок" hidden>
@@ -542,6 +542,35 @@ def w(p,s):
     if d: os.makedirs(d,exist_ok=True)
     open(p,'w').write(s)
 w('index.html',page('/','ДОСКА – помогаем брендам решать дизайн-задачи',D,INDEX.replace('{{FORM}}',FORM)))
+
+# ---------- страница «Дополнительно»: юридические страницы и документы ----------
+DOCS_DIR='assets/docs'
+def _size(f):
+    return os.path.getsize(os.path.join(DOCS_DIR,f))//1024+1
+def _file(f,title,note=''):
+    return '<a class="dfile" href="/assets/docs/%s" download><span><b>%s</b>%s</span><small>DOCX · %d КБ</small><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></i></a>'%(f,title,('<em>%s</em>'%note) if note else '',_size(f))
+OFERTY=[
+ ('Логотип и айдентика',[('oferta-logotip-bazovyy-30000.docx','Базовый','30 000 ₽'),('oferta-logotip-standart-80000.docx','Стандарт','80 000 ₽'),('oferta-logotip-kastom-250000.docx','Кастом','250 000 ₽')]),
+ ('Лендинг',[('oferta-lending-bazovyy-40000.docx','Базовый','40 000 ₽'),('oferta-lending-standart-60000.docx','Стандарт','60 000 ₽'),('oferta-lending-kastom-180000.docx','Кастом','180 000 ₽')]),
+ ('Корпоративный сайт',[('oferta-korporativnyy-bazovyy-60000.docx','Базовый','60 000 ₽'),('oferta-korporativnyy-standart-120000.docx','Стандарт','120 000 ₽'),('oferta-korporativnyy-kastom-250000.docx','Кастом','250 000 ₽')]),
+ ('Интернет-магазин',[('oferta-magazin-bazovyy-80000.docx','Базовый','80 000 ₽'),('oferta-magazin-standart-150000.docx','Стандарт','150 000 ₽'),('oferta-magazin-kastom-350000.docx','Кастом','350 000 ₽')]),
+ ('Техническая поддержка',[('oferta-podderzhka-bazovyy-24900.docx','Базовый','24 900 ₽ в месяц'),('oferta-podderzhka-standart-44900.docx','Стандарт','44 900 ₽ в месяц'),('oferta-podderzhka-ultima-99900.docx','Ультима','99 900 ₽ в месяц')]),
+]
+SPECS=[('spetsifikatsiya-logotip-aydentika.docx','Логотип и айдентика'),('spetsifikatsiya-lending.docx','Лендинг'),('spetsifikatsiya-korporativnyy-sayt.docx','Корпоративный сайт'),('spetsifikatsiya-internet-magazin.docx','Интернет-магазин'),('spetsifikatsiya-tekhnicheskaya-podderzhka.docx','Техническая поддержка')]
+def dokumenty():
+    h='<main><div class="wrap dpage">\n  <div class="page-title"><h1><em>дополнительно</em></h1>\n    <p class="sub">Юридические страницы, договоры и спецификации.</p></div>\n'
+    h+='  <div class="dlinks">'
+    for href,t,s in [('/politika','политика конфиденциальности','Как мы обрабатываем и защищаем персональные данные'),('/usloviya','оплата, доставка и возврат','Как оплатить, получить результат и вернуть деньги'),('/rekvizity','реквизиты','Данные исполнителя для договоров и оплаты'),('#документы','документы и спецификации','Оферты по каждому тарифу и спецификации по направлениям')]:
+        h+='<a class="dcard" href="%s"><b>%s</b><p>%s</p><i aria-hidden="true">→</i></a>'%(href,t,s)
+    h+='</div>\n  <section id="документы" class="dsec">\n    <h2>документы и <em>спецификации</em></h2>\n    <p class="sub">Оплата тарифа считается акцептом публичной оферты и условий спецификации. Файлы можно скачать.</p>\n'
+    h+='    <div class="dgroup"><h3>общая оферта</h3><div class="dlist">'+_file('obshchaya-publichnaya-oferta-doska.docx','Общая публичная оферта','Условия для всех услуг')+'</div></div>\n'
+    h+='    <div class="dgroup"><h3>спецификации по направлениям</h3><div class="dlist">'+''.join(_file(f,t) for f,t in SPECS)+'</div></div>\n'
+    for name,items in OFERTY:
+        h+='    <div class="dgroup"><h3>оферты: %s</h3><div class="dlist">'%name.lower()+''.join(_file(f,'Тариф «%s»'%t,p) for f,t,p in items)+'</div></div>\n'
+    h+='  </section>\n</div></main>\n'
+    return h
+
+w('dokumenty/index.html',page('/dokumenty','Дополнительно – ДОСКА','Политика, оплата и возврат, реквизиты, договоры и спецификации.',dokumenty()))
 w('lenta/index.html',page('/lenta','Лента – ДОСКА','Материалы и проекты агентства ДОСКА.',LENTA))
 w('kontakty/index.html',page('/kontakty','Контакты – ДОСКА','Контакты и соцсети агентства ДОСКА.',KONTAKTY.replace('{{FORM}}',FORM)))
 w('post.html',page('/lenta','Материал – ДОСКА','Материалы и проекты агентства ДОСКА.',POST))

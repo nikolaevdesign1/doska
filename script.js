@@ -33,7 +33,11 @@
 
   /* ---------- меню ---------- */
   const b=$('.burger'),n=$('.nav');
-  if(b)b.addEventListener('click',()=>n.classList.toggle('open'));
+  const закрытьМеню=()=>{n.classList.remove('open');document.body.classList.remove('lock');if(b)b.textContent='меню'};
+  if(b)b.addEventListener('click',()=>{const o=n.classList.toggle('open');document.body.classList.toggle('lock',o);b.textContent=o?'закрыть':'меню'});
+  if(n)n.addEventListener('click',e=>{if(e.target.closest('a,[data-order]'))закрытьМеню()});
+  addEventListener('keydown',e=>{if(e.key==='Escape')закрытьМеню()});
+  addEventListener('resize',()=>{if(innerWidth>900)закрытьМеню()});
 
   /* ---------- плавные переходы между страницами ---------- */
   document.addEventListener('click',e=>{
@@ -416,6 +420,7 @@
       if(вид&&!идет){идет=true;requestAnimationFrame(цикл)}
     }).observe(блок);
     let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{размер();рисовать(performance.now())},120)});
+    if(window.ResizeObserver){let ro;new ResizeObserver(()=>{clearTimeout(ro);ro=setTimeout(()=>{размер();рисовать(performance.now())},80)}).observe(блок)}
   });
 
   /* ---------- страница «доска.поддержка»: кнопки заявки и тарифы ---------- */

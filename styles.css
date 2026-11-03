@@ -642,3 +642,54 @@ select.cs{display:none}
 .plan .save.hint{background:#f2f1f6;color:var(--mute);font-weight:600}
 .tab .tb{margin-left:6px;font-size:11px;font-weight:800;color:var(--accent);transition:color .3s}
 .tab.on .tb{color:#cbbfff}
+
+/* ---------- схема работы: карточки справа ровно делят высоту схемы, текст по центру ---------- */
+.ai-grid .ai-steps{grid-template-rows:repeat(4,1fr)}
+.ai-steps li{display:flex;flex-direction:column;justify-content:center}
+.ai-steps li::before{top:50%;margin-top:-.75em}
+@media(max-width:900px){.ai-grid .ai-steps{grid-template-rows:none}.ai-steps li::before{top:18px;margin-top:0}.ai-steps li{display:block}}
+
+/* ---------- мобильная версия ---------- */
+.nav-extra{display:none}
+@media(max-width:900px){
+  /* меню на весь экран с контактами */
+  .nav.open,.head .wrap>.nav.open{position:fixed;inset:0;width:100%;justify-self:stretch;z-index:60;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:0;padding:104px 24px 36px;background:var(--bg);overflow:auto;animation:menuIn .4s var(--ease)}
+  .nav.open>a{font-size:clamp(30px,9vw,44px);font-weight:600;letter-spacing:-.035em;line-height:1.1;padding:14px 0;border-bottom:1px solid var(--line)}
+  .nav.open>a::after{display:none}
+  .nav.open .nav-extra{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:auto;padding-top:32px}
+  .nav.open .nav-extra .nav-lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  .nav.open .nav-extra a{font-size:18px;font-weight:600;padding:0;border:0}
+  .nav.open .nav-extra .btn{display:inline-flex;margin-top:8px;width:100%;justify-content:center;padding:16px 24px;font-size:15px}
+  .head:has(.nav.open) .burger{position:relative;z-index:70}
+  .head:has(.nav.open) .logo{position:relative;z-index:70}
+  .head:has(.nav.open){background:var(--bg)}
+}
+@keyframes menuIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@media(max-width:640px){
+  /* плитки ленты и проектов выше, картинка и видео не режутся полосой */
+  .grid>.tile,.grid>.tile.wide{aspect-ratio:4/5}
+  .tile img,.tile video{object-fit:cover;object-position:center}
+  /* логотипы клиентов поменьше */
+  .clients{gap:22px 34px}
+  .clients img{height:30px;max-width:96px}
+  /* кнопка чата всегда раскрыта */
+  .chat-fab{gap:10px;padding:0 20px 0 17px;height:52px}
+  .chat-fab span{display:inline;max-width:200px;opacity:1;font-size:14px}
+  /* форма: подписи помещаются */
+  .row textarea{min-height:3.4em}
+  .row input,.row textarea{font-size:16px}
+  /* подвал: сначала меню и ссылки, потом логотип, выходящий за нижний край */
+  .foot .wrap{display:flex;flex-direction:column}
+  .foot .top{order:1}.foot .bottom{order:2;margin-top:28px}
+  .foot .big{order:3;margin:36px 0 -.16em;font-size:clamp(70px,24vw,140px)}
+}
+@media(min-width:641px) and (max-width:900px){
+  /* планшет: по два проекта в линию */
+  .grid>.tile,.grid>.tile.s3,.grid>.tile.s4,.grid>.tile.s5,.grid>.tile.s6,.grid>.tile.s7,.grid>.tile.s8,.grid>.tile.s12,.grid>.tile.wide{grid-column:span 6;aspect-ratio:4/3;min-height:0}
+}
+body.lock .chat-fab{opacity:0;pointer-events:none}
+@media(min-width:641px) and (max-width:900px){
+  /* планшет: список «работаем прозрачно» в две колонки */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .feat .f{margin:0}
+}

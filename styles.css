@@ -723,3 +723,5 @@ body.lock .chat-fab{opacity:0;pointer-events:none}
 .dcard.soon{box-shadow:none;background:transparent;border:1px dashed #cfcbdc;cursor:default}
 .dcard.soon:hover{transform:none;box-shadow:none}
 .dcard.soon .soon-tag{position:absolute;left:24px;bottom:20px;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700}
+/* открытое меню: у шапки не должно быть размытия, иначе position:fixed внутри нее считается от шапки, а не от экрана */
+.head.menu-open,.head.scrolled.menu-open{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--bg);box-shadow:none}

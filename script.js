@@ -33,8 +33,9 @@
 
   /* ---------- меню ---------- */
   const b=$('.burger'),n=$('.nav');
-  const закрытьМеню=()=>{n.classList.remove('open');document.body.classList.remove('lock');if(b)b.textContent='меню'};
-  if(b)b.addEventListener('click',()=>{const o=n.classList.toggle('open');document.body.classList.toggle('lock',o);b.textContent=o?'закрыть':'меню'});
+  const шап=$('.head');
+  const закрытьМеню=()=>{n.classList.remove('open');document.body.classList.remove('lock');if(шап)шап.classList.remove('menu-open');if(b)b.textContent='меню'};
+  if(b)b.addEventListener('click',()=>{const o=n.classList.toggle('open');document.body.classList.toggle('lock',o);if(шап)шап.classList.toggle('menu-open',o);b.textContent=o?'закрыть':'меню'});
   if(n)n.addEventListener('click',e=>{if(e.target.closest('a,[data-order]'))закрытьМеню()});
   addEventListener('keydown',e=>{if(e.key==='Escape')закрытьМеню()});
   addEventListener('resize',()=>{if(innerWidth>900)закрытьМеню()});

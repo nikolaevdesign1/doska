@@ -720,3 +720,6 @@ body.lock .chat-fab{opacity:0;pointer-events:none}
 .dfile:hover i{background:var(--accent)}.dfile:hover i svg{stroke:#fff}
 @media(max-width:1000px){.dlinks{grid-template-columns:1fr 1fr}.dlist{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.dlinks,.dlist{grid-template-columns:1fr}.dcard{min-height:0}}
+.dcard.soon{box-shadow:none;background:transparent;border:1px dashed #cfcbdc;cursor:default}
+.dcard.soon:hover{transform:none;box-shadow:none}
+.dcard.soon .soon-tag{position:absolute;left:24px;bottom:20px;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700}

@@ -545,6 +545,7 @@ w('index.html',page('/','ДОСКА – помогаем брендам реша
 
 # ---------- страница «Дополнительно»: юридические страницы и документы ----------
 DOCS_DIR='assets/docs'
+DOCS_PUBLISHED=False  # True, когда файлы лежат в assets/docs: тогда на странице появляется список документов
 def _size(f):
     return os.path.getsize(os.path.join(DOCS_DIR,f))//1024+1
 def _file(f,title,note=''):
@@ -560,9 +561,14 @@ SPECS=[('spetsifikatsiya-logotip-aydentika.docx','Логотип и айдент
 def dokumenty():
     h='<main><div class="wrap dpage">\n  <div class="page-title"><h1><em>дополнительно</em></h1>\n    <p class="sub">Юридические страницы, договоры и спецификации.</p></div>\n'
     h+='  <div class="dlinks">'
-    for href,t,s in [('/politika','политика конфиденциальности','Как мы обрабатываем и защищаем персональные данные'),('/usloviya','оплата, доставка и возврат','Как оплатить, получить результат и вернуть деньги'),('/rekvizity','реквизиты','Данные исполнителя для договоров и оплаты'),('#документы','документы и спецификации','Оферты по каждому тарифу и спецификации по направлениям')]:
-        h+='<a class="dcard" href="%s"><b>%s</b><p>%s</p><i aria-hidden="true">→</i></a>'%(href,t,s)
-    h+='</div>\n  <section id="документы" class="dsec">\n    <h2>документы и <em>спецификации</em></h2>\n    <p class="sub">Оплата тарифа считается акцептом публичной оферты и условий спецификации. Файлы можно скачать.</p>\n'
+    cards=[('/politika','политика конфиденциальности','Как мы обрабатываем и защищаем персональные данные'),('/usloviya','оплата, доставка и возврат','Как оплатить, получить результат и вернуть деньги'),('/rekvizity','реквизиты','Данные исполнителя для договоров и оплаты')]
+    cards.append(('#документы' if DOCS_PUBLISHED else '','документы и спецификации','Оферты по каждому тарифу и спецификации по направлениям'))
+    for href,t,s in cards:
+        if href: h+='<a class="dcard" href="%s"><b>%s</b><p>%s</p><i aria-hidden="true">→</i></a>'%(href,t,s)
+        else: h+='<div class="dcard soon"><b>%s</b><p>%s</p><span class="soon-tag">скоро</span></div>'%(t,s)
+    h+='</div>\n'
+    if not DOCS_PUBLISHED: return h+'</div></main>\n'
+    h+='  <section id="документы" class="dsec">\n    <h2>документы и <em>спецификации</em></h2>\n    <p class="sub">Оплата тарифа считается акцептом публичной оферты и условий спецификации. Файлы можно скачать.</p>\n'
     h+='    <div class="dgroup"><h3>общая оферта</h3><div class="dlist">'+_file('obshchaya-publichnaya-oferta-doska.docx','Общая публичная оферта','Условия для всех услуг')+'</div></div>\n'
     h+='    <div class="dgroup"><h3>спецификации по направлениям</h3><div class="dlist">'+''.join(_file(f,t) for f,t in SPECS)+'</div></div>\n'
     for name,items in OFERTY:

@@ -502,7 +502,7 @@ PODD='''
     <div class="team-text">
       <h2>дизайнер, разработчик, маркетолог и копирайтер <em>в одной подписке</em></h2>
       <p>Оформите одну подписку и закройте сразу 4 позиции в компании. Мы анализируем входящий трафик, дизайним новые блоки, ведем разработку и пишем тексты – быстрее и дешевле, чем нанимать отдельных специалистов.</p>
-      <button class="btn btn-accent" type="button" data-integr>оставить заявку на интеграцию</button>
+      <button class="btn btn-accent" type="button" data-integr>подключить поддержку</button>
     </div>
     <div class="team-art" aria-hidden="false"><div class="team-role r1"><span class="emo-b" aria-hidden="true">🎨</span><b>Дизайнер</b><p>Рисует новые блоки и страницы по вашему стилю</p></div><div class="team-role r2"><span class="emo-b" aria-hidden="true">💻</span><b>Разработчик</b><p>Вносит правки и собирает страницы на вашей платформе</p></div><div class="team-role r3"><span class="emo-b" aria-hidden="true">📈</span><b>Маркетолог</b><p>Анализирует входящий трафик и подсказывает, что поправить</p></div><div class="team-role r4"><span class="emo-b" aria-hidden="true">✍️</span><b>Копирайтер</b><p>Пишет и правит тексты, заголовки и описания</p></div></div>
   </section>
@@ -526,7 +526,7 @@ PODD='''
       <i class="orb o1" aria-hidden="true"></i><i class="orb o2" aria-hidden="true"></i><i class="grid-dots" aria-hidden="true"></i>
       <div class="cta-main">
         <h2>подключим вашу поддержку<br><em>за один день</em></h2>
-        <button class="btn btn-accent" type="button" data-integr>оставить заявку на интеграцию</button>
+        <button class="btn btn-accent" type="button" data-integr>подключить поддержку</button>
       </div>
       <div class="cta-tags" aria-hidden="true"><span class="t1">серверы в РФ</span><span class="t2">ответ в день заявки</span><span class="t3">без долгих договоренностей</span></div>
       <div class="cta-facts">

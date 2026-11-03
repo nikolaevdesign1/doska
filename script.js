@@ -420,7 +420,7 @@
   if(плП&&перП){
     const вывести=()=>{
       плП.innerHTML=ТАРИФЫ[КП].map(t=>{const ц=цена(t[1]);
-        return '<div class="plan'+(t[4]?' hit':'')+'"><h3>'+t[0]+(t[4]?'<small>'+(t[4]===1?'популярный':t[4])+'</small>':'')+'</h3><div class="price">'+ц.главная+'</div><p class="period">'+ц.доп+'</p><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li'+(/^Не входят?/.test(y)?' class="no"':'')+'>'+y+'</li>').join('')+'</ul><button type="button" class="btn '+(t[4]?'btn-accent':'')+'" data-н="'+t[0]+'">оставить заявку на интеграцию</button></div>'}).join('');
+        return '<div class="plan'+(t[4]?' hit':'')+'"><h3>'+t[0]+(t[4]?'<small>'+(t[4]===1?'популярный':t[4])+'</small>':'')+'</h3><div class="price">'+ц.главная+'</div><p class="period">'+ц.доп+'</p><p>'+t[2]+'</p><ul>'+t[3].map(y=>'<li'+(/^Не входят?/.test(y)?' class="no"':'')+'>'+y+'</li>').join('')+'</ul><button type="button" class="btn '+(t[4]?'btn-accent':'')+'" data-н="'+t[0]+'">подключить поддержку</button></div>'}).join('');
       $$('.plan .btn',плП).forEach(b=>b.addEventListener('click',()=>{
         if(window.открытьЗаказ)window.открытьЗаказ({тариф:КП+' · '+b.dataset.н+' · оплата '+ПЕРИОДЫ[период],тема:'Техническая поддержка'});
       }));

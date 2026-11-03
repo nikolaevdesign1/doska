@@ -154,7 +154,7 @@ section h2+.sub,.more-posts h2+.sub{margin-bottom:clamp(32px,4vw,56px)}
 .seg .tab::before{content:"";position:absolute;inset:0;border-radius:999px;background:#fff;z-index:0}
 .seg .tab .t{position:relative;z-index:2}
 .seg .tab.on,.seg .tab.on:hover{background:transparent;color:#fff}
-.seg-thumb{position:absolute;top:5px;bottom:5px;left:0;z-index:1;pointer-events:none;border-radius:999px;background:var(--ink);box-shadow:0 6px 16px rgba(20,18,28,.22);transition:transform .5s cubic-bezier(.34,1.35,.64,1),width .5s cubic-bezier(.34,1.35,.64,1),opacity .3s}
+.seg-thumb{position:absolute;top:5px;height:calc(100% - 10px);left:0;z-index:1;pointer-events:none;border-radius:999px;background:var(--ink);box-shadow:0 6px 16px rgba(20,18,28,.22);transition:transform .5s cubic-bezier(.34,1.35,.64,1),width .5s cubic-bezier(.34,1.35,.64,1),top .4s var(--ease),height .4s var(--ease),opacity .3s}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .plan{background:var(--card);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;border:2px solid transparent;transition:transform .3s var(--ease),box-shadow .3s}
 .plan:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(40,30,90,.14)}
@@ -238,9 +238,10 @@ select.cs{display:none}
 .bottom .links{display:flex;gap:28px;flex-wrap:wrap}
 
 /* куки */
-.cookie{position:fixed;right:24px;bottom:24px;z-index:50;background:var(--card);box-shadow:0 16px 50px rgba(0,0,0,.16);border-radius:40px;padding:32px 34px;width:min(440px,calc(100% - 32px));display:grid;gap:26px;animation:pop .5s var(--ease) .6s both}
-.cookie p{font-size:17px;line-height:1.4}
-.cookie .btn{justify-self:start;padding:12px 24px;font-size:15px}
+.cookie{position:fixed;right:20px;bottom:20px;z-index:50;background:var(--card);box-shadow:0 12px 40px rgba(0,0,0,.14);border:1px solid var(--line);border-radius:18px;padding:14px 16px 14px 18px;width:min(520px,calc(100% - 32px));display:flex;align-items:center;gap:16px;animation:pop .5s var(--ease) .6s both}
+.cookie p{flex:1;font-size:13px;line-height:1.4;color:#4a4757}
+.cookie .btn{flex:none;padding:9px 18px;font-size:13px}
+@media(max-width:600px){.cookie{left:10px;right:10px;bottom:10px;width:auto;padding:12px 12px 12px 14px;gap:12px;border-radius:16px}.cookie p{font-size:12px}.cookie .btn{padding:8px 14px;font-size:12px}}
 .cookie.gone{opacity:0;transform:translateY(20px);transition:opacity .3s,transform .3s}
 
 /* окно заказа */
@@ -511,7 +512,7 @@ select.cs{display:none}
 .head .wrap>.nav{justify-self:center}
 .head .wrap>.btn:not(.burger){justify-self:end}
 .head .wrap>.burger{justify-self:end}
-@media(max-width:900px){.head .wrap{grid-template-columns:1fr auto}.head .wrap>.nav{display:none}}
+@media(max-width:900px){.head .wrap{grid-template-columns:1fr auto}.head .wrap>.nav{display:none}.head .wrap>.nav.open{display:flex}}
 
 /* ---------- кнопка чата справа снизу (правка 156) ---------- */
 .chat-fab{position:fixed;right:24px;bottom:calc(24px + var(--ck,0px));z-index:40;display:flex;align-items:center;gap:0;height:56px;min-width:56px;padding:0 17px;border-radius:999px;background:var(--accent);color:#fff;box-shadow:0 12px 30px rgba(94,64,220,.4);font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;transition:gap .35s var(--ease),padding .35s var(--ease),transform .3s var(--ease),bottom .3s var(--ease)}
@@ -572,3 +573,64 @@ select.cs{display:none}
 .hx .sub{text-align:left;margin-left:0}
 .hx .hero-cta{margin-top:30px;gap:10px;flex-wrap:wrap}
 .hx .rf{margin:0}
+
+/* ---------- «ИИ-система»: схема работы (SVG), цикл 12 секунд, шаги синхронны со списком ---------- */
+.video.ai-vid{padding:0;display:block;min-height:0;aspect-ratio:600/440}
+.video.ai-vid::after{opacity:.6}
+.ai-svg{position:relative;z-index:1;width:100%;height:100%;display:block;font-family:var(--f-text);overflow:hidden}
+.ai-svg .st{opacity:0;animation:aiStep 12s infinite}
+.ai-svg .s1{animation-name:aiS1}.ai-svg .s2{animation-name:aiS2}.ai-svg .s3{animation-name:aiS3}.ai-svg .s4{animation-name:aiS4}
+@keyframes aiS1{0%,22%{opacity:1}25%,96%{opacity:0}100%{opacity:1}}
+@keyframes aiS2{0%,24%{opacity:0}27%,47%{opacity:1}50%,100%{opacity:0}}
+@keyframes aiS3{0%,49%{opacity:0}52%,72%{opacity:1}75%,100%{opacity:0}}
+@keyframes aiS4{0%,74%{opacity:0}77%,94%{opacity:1}97%,100%{opacity:0}}
+.ai-svg .ai-nav{opacity:0}
+.ai-svg .a1{animation:aiA1 12s infinite}.ai-svg .a2{animation:aiS2 12s infinite}.ai-svg .a3{animation:aiS3 12s infinite}.ai-svg .a4{animation:aiS4 12s infinite}
+@keyframes aiA1{0%,24%{opacity:1}26%,96%{opacity:0}100%{opacity:1}}
+.ai-svg .n{fill:#2c2650;stroke:#fff;stroke-opacity:.35}
+.ai-svg .ai-nodes text{fill:#fff}
+.ai-svg .n1{animation:aiN1 12s infinite}.ai-svg .n2{animation:aiN2 12s infinite}.ai-svg .n3{animation:aiN3 12s infinite}.ai-svg .n4{animation:aiN4 12s infinite}
+@keyframes aiN1{0%,24%{fill:#7b5cf0}26%,96%{fill:#2c2650}100%{fill:#7b5cf0}}
+@keyframes aiN2{0%,25%{fill:#2c2650}27%,47%{fill:#7b5cf0}50%,100%{fill:#2c2650}}
+@keyframes aiN3{0%,50%{fill:#2c2650}52%,72%{fill:#7b5cf0}75%,100%{fill:#2c2650}}
+@keyframes aiN4{0%,75%{fill:#2c2650}77%,94%{fill:#7b5cf0}97%,100%{fill:#2c2650}}
+.ai-svg [class*="ty"],.ai-svg .bar,.ai-svg .cd,.ai-svg .btn1,.ai-svg .sel,.ai-svg .bub,.ai-svg .grow{transform-box:fill-box;transform-origin:left center}
+.ai-svg .ty1{animation:aiTy1 12s infinite}.ai-svg .ty2{animation:aiTy2 12s infinite}.ai-svg .ty3{animation:aiTy3 12s infinite}
+@keyframes aiTy1{0%,3%{transform:scaleX(0)}10%,100%{transform:scaleX(1)}}
+@keyframes aiTy2{0%,9%{transform:scaleX(0)}13%,100%{transform:scaleX(1)}}
+@keyframes aiTy3{0%,12%{transform:scaleX(0)}16%,100%{transform:scaleX(1)}}
+.ai-svg .btn1{transform-origin:center;animation:aiBtn 12s infinite}
+@keyframes aiBtn{0%,17%{transform:scale(1)}18.5%{transform:scale(.92)}20%{transform:scale(1.04)}21.5%,100%{transform:scale(1)}}
+.ai-svg .ai-chip{animation:aiChip 12s infinite}
+@keyframes aiChip{0%,19%{opacity:0}21%,100%{opacity:1}}
+.ai-svg .bar{animation:aiBar 12s infinite}
+@keyframes aiBar{0%,26%{transform:scaleX(0)}40%,100%{transform:scaleX(1)}}
+.ai-svg .cd{transform-origin:center}
+.ai-svg .cd1{animation:aiC1 12s infinite}.ai-svg .cd2{animation:aiC2 12s infinite}.ai-svg .cd3{animation:aiC3 12s infinite}
+@keyframes aiC1{0%,27%{transform:scale(0)}31%{transform:scale(1.06)}33%,100%{transform:scale(1)}}
+@keyframes aiC2{0%,31%{transform:scale(0)}35%{transform:scale(1.06)}37%,100%{transform:scale(1)}}
+@keyframes aiC3{0%,35%{transform:scale(0)}39%{transform:scale(1.06)}41%,100%{transform:scale(1)}}
+.ai-svg .sel{transform-origin:center;animation:aiSel 12s infinite}
+@keyframes aiSel{0%,53%{transform:scale(.7);opacity:0}57%,100%{transform:scale(1);opacity:1}}
+.ai-svg .bub{transform-origin:left bottom;animation:aiBub 12s infinite}
+@keyframes aiBub{0%,58%{transform:scale(.5);opacity:0}62%{transform:scale(1.05);opacity:1}64%,100%{transform:scale(1);opacity:1}}
+.ai-svg .grow{animation:aiGrow 12s infinite}
+@keyframes aiGrow{0%,64%{transform:scaleX(1)}69%,100%{transform:scaleX(1.18)}}
+.ai-svg .tick{stroke-dasharray:50;animation:aiTick 12s infinite}
+@keyframes aiTick{0%,77%{stroke-dashoffset:50}83%,100%{stroke-dashoffset:0}}
+@keyframes aiCur1{0%{transform:translate(120px,320px);opacity:0}3%{opacity:1}8%{transform:translate(220px,126px)}14%{transform:translate(224px,176px)}17%{transform:translate(236px,240px)}20%{transform:translate(246px,244px)}24%,100%{transform:translate(246px,244px);opacity:0}}
+.ai-svg .c1{animation:aiCur1 12s infinite}
+@keyframes aiCur2{0%,49%{transform:translate(500px,300px);opacity:0}51%{opacity:1}56%{transform:translate(350px,250px)}60%{transform:translate(350px,170px)}68%{transform:translate(350px,170px)}73%{transform:translate(480px,220px);opacity:1}75%,100%{transform:translate(480px,220px);opacity:0}}
+.ai-svg .c2{animation:aiCur2 12s infinite}
+.ai-steps li{transition:box-shadow .3s}
+.ai-steps li{animation:aiLi 12s infinite}
+.ai-steps li:nth-child(2){animation-delay:3s}.ai-steps li:nth-child(3){animation-delay:6s}.ai-steps li:nth-child(4){animation-delay:9s}
+@keyframes aiLi{0%,24%{box-shadow:0 0 0 2px var(--accent),var(--shadow)}26%,100%{box-shadow:var(--shadow)}}
+@media (prefers-reduced-motion:reduce){.ai-svg *,.ai-steps li{animation:none!important}.ai-svg .s1{opacity:1}}
+
+/* ---------- длинный список услуг: на телефоне и планшете «показать больше» ---------- */
+.more-btn{display:none;margin-top:18px}
+@media(max-width:900px){
+  .services .cols:not(.open)>div:nth-child(n+2){display:none}
+  .more-btn{display:inline-flex}
+}

@@ -27,6 +27,10 @@
     следить();addEventListener('scroll',следить,{passive:true});
   }
 
+  /* ---------- «показать больше» в списке услуг ---------- */
+  const mb=$('[data-more]'),cols=mb&&mb.previousElementSibling;
+  if(mb&&cols)mb.addEventListener('click',()=>{const o=cols.classList.toggle('open');mb.textContent=o?'свернуть':'показать больше';mb.setAttribute('aria-expanded',String(o))});
+
   /* ---------- меню ---------- */
   const b=$('.burger'),n=$('.nav');
   if(b)b.addEventListener('click',()=>n.classList.toggle('open'));
@@ -225,7 +229,7 @@
       const а=табы.find(e=>e.classList.contains('on'));
       ползунок.classList.toggle('off',!а);
       if(!а)return;
-      ползунок.style.width=а.offsetWidth+'px';ползунок.style.transform='translateX('+а.offsetLeft+'px)';
+      ползунок.style.width=а.offsetWidth+'px';ползунок.style.height=а.offsetHeight+'px';ползунок.style.top=а.offsetTop+'px';ползунок.style.transform='translateX('+а.offsetLeft+'px)';
     }
     function выбрать(t,к,фокус){
       if(t.classList.contains('on'))return;

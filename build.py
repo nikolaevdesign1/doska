@@ -138,13 +138,83 @@ INDEX='''
       <div>презентации<br>годовые отчеты<br>брошюры<br>шаблоны писем<br>руководства по стилю<br>рабочие тетради</div>
       <div>брендинг<br>айдентика<br>нейминг<br>копирайтинг<br>ведение соцсетей<br>креатив</div>
     </div>
+    <button class="btn more-btn" type="button" data-more aria-expanded="false">показать больше</button>
   </section>
 
   <section id="ии" class="ai">
     <h2>работаем через ИИ-интеграции<br><em>и собираем быстрее</em></h2>
     <p class="lead2">Мы построили ИИ-систему, которая берет на себя рутину: разбирает бриф, собирает черновики и подготавливает материалы. Дизайнеры тратят время на идею и качество, а вы получаете результат заметно быстрее <span class="emo" role="img" aria-label="ракета" style="--r:8deg">🚀</span></p>
     <div class="ai-grid">
-      <div class="video" role="img" aria-label="Место под видео о работе ИИ-системы"><span>видео о том, как работает система, появится здесь</span></div>
+      <div class="video ai-vid"><svg class="ai-svg" viewBox="0 0 600 440" role="img" aria-label="Как работает система: ставим задачу, система собирает черновик, дизайнер доводит до результата, передаем готовое">
+  <defs>
+    <pattern id="aiGrid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#fff" stroke-opacity=".07"/></pattern>
+    <filter id="aiSh" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0d0a24" flood-opacity=".45"/></filter>
+    <path id="aiPtr" d="M0 0L0 17L4.6 13L7.6 20.2L10.4 19L7.4 12L13.4 12Z"/>
+  </defs>
+  <rect width="600" height="440" fill="url(#aiGrid)"/>
+  <g fill="none" stroke="#fff" stroke-opacity=".16" stroke-dasharray="4 6">
+    <path d="M60 396H540"/><path d="M60 396V352"/><path d="M200 396V352"/><path d="M340 396V352"/><path d="M480 396V352"/>
+    <path d="M18 120V60M18 60H34" /><path d="M582 330V390M582 390H566"/>
+  </g>
+  <g class="ai-nodes" font-size="11" font-weight="700" text-anchor="middle">
+    <g transform="translate(60,396)"><circle r="12" class="n n1"/><text y="4">01</text></g>
+    <g transform="translate(200,396)"><circle r="12" class="n n2"/><text y="4">02</text></g>
+    <g transform="translate(340,396)"><circle r="12" class="n n3"/><text y="4">03</text></g>
+    <g transform="translate(480,396)"><circle r="12" class="n n4"/><text y="4">04</text></g>
+  </g>
+  <g filter="url(#aiSh)"><rect x="40" y="36" width="520" height="296" rx="16" fill="#fff"/></g>
+  <path d="M40 70H560" stroke="#e7e5ee"/><path d="M170 70V332" stroke="#e7e5ee"/>
+  <circle cx="62" cy="53" r="4.5" fill="#e7e5ee"/><circle cx="78" cy="53" r="4.5" fill="#e7e5ee"/><circle cx="94" cy="53" r="4.5" fill="#e7e5ee"/>
+  <rect x="190" y="43" width="190" height="20" rx="10" fill="#f2f1f6"/><text x="285" y="57" text-anchor="middle" font-size="10.5" font-weight="600" fill="#8a8794">доска.система / проект</text>
+  <g font-size="12" font-weight="700">
+    <g class="ai-nav a1"><rect x="52" y="86" width="108" height="32" rx="10" fill="#ece7ff"/></g>
+    <g class="ai-nav a2"><rect x="52" y="126" width="108" height="32" rx="10" fill="#ece7ff"/></g>
+    <g class="ai-nav a3"><rect x="52" y="166" width="108" height="32" rx="10" fill="#ece7ff"/></g>
+    <g class="ai-nav a4"><rect x="52" y="206" width="108" height="32" rx="10" fill="#ece7ff"/></g>
+    <text x="66" y="106" fill="#14121c"><tspan fill="#7b5cf0">01</tspan>  Задача</text>
+    <text x="66" y="146" fill="#14121c"><tspan fill="#7b5cf0">02</tspan>  Черновик</text>
+    <text x="66" y="186" fill="#14121c"><tspan fill="#7b5cf0">03</tspan>  Правки</text>
+    <text x="66" y="226" fill="#14121c"><tspan fill="#7b5cf0">04</tspan>  Готово</text>
+  </g>
+  <rect x="52" y="290" width="108" height="30" rx="10" fill="#f6f6f7"/><rect x="62" y="302" width="60" height="6" rx="3" fill="#e0deea"/>
+
+  <g class="st s1">
+    <text x="192" y="98" font-size="13" font-weight="800" fill="#14121c">Новая задача</text>
+    <rect x="192" y="110" width="340" height="40" rx="12" fill="#f6f6f7"/><rect class="ty ty1" x="204" y="126" width="200" height="8" rx="4" fill="#14121c"/>
+    <rect x="192" y="162" width="160" height="40" rx="12" fill="#f6f6f7"/><rect class="ty ty2" x="204" y="178" width="90" height="8" rx="4" fill="#8a8794"/>
+    <rect x="364" y="162" width="168" height="40" rx="12" fill="#f6f6f7"/><rect class="ty ty3" x="376" y="178" width="110" height="8" rx="4" fill="#8a8794"/>
+    <g class="btn1"><rect x="192" y="224" width="120" height="36" rx="18" fill="#7b5cf0"/><text x="252" y="246" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">отправить</text></g>
+    <g class="ai-chip"><rect x="326" y="224" width="206" height="36" rx="18" fill="#f2efff"/><circle cx="346" cy="242" r="5" fill="#7b5cf0"/><text x="360" y="246" font-size="11" font-weight="700" fill="#5f3fd8">ИИ разбирает бриф…</text></g>
+  </g>
+
+  <g class="st s2">
+    <text x="192" y="98" font-size="13" font-weight="800" fill="#14121c">Система собирает черновик</text>
+    <rect x="192" y="108" width="340" height="6" rx="3" fill="#ece7ff"/><rect class="bar" x="192" y="108" width="340" height="6" rx="3" fill="#7b5cf0"/>
+    <g class="cd cd1"><rect x="192" y="130" width="104" height="140" rx="12" fill="#f6f6f7"/><rect x="202" y="140" width="84" height="64" rx="8" fill="#cfc2ff"/><rect x="202" y="214" width="60" height="8" rx="4" fill="#14121c"/><rect x="202" y="230" width="84" height="6" rx="3" fill="#e0deea"/></g>
+    <g class="cd cd2"><rect x="308" y="130" width="104" height="140" rx="12" fill="#f6f6f7"/><rect x="318" y="140" width="84" height="64" rx="8" fill="#ece7ff"/><rect x="318" y="214" width="70" height="8" rx="4" fill="#14121c"/><rect x="318" y="230" width="84" height="6" rx="3" fill="#e0deea"/></g>
+    <g class="cd cd3"><rect x="424" y="130" width="108" height="140" rx="12" fill="#f6f6f7"/><rect x="434" y="140" width="88" height="64" rx="8" fill="#b9a6ff"/><rect x="434" y="214" width="50" height="8" rx="4" fill="#14121c"/><rect x="434" y="230" width="88" height="6" rx="3" fill="#e0deea"/></g>
+    <text x="192" y="296" font-size="11" font-weight="700" fill="#8a8794">3 варианта за несколько минут</text>
+  </g>
+
+  <g class="st s3">
+    <text x="192" y="98" font-size="13" font-weight="800" fill="#14121c">Дизайнер доводит до результата</text>
+    <g><rect x="192" y="130" width="104" height="140" rx="12" fill="#f6f6f7"/><rect x="202" y="140" width="84" height="64" rx="8" fill="#e7e5ee"/><rect x="202" y="214" width="60" height="8" rx="4" fill="#c9c6d6"/><rect x="202" y="230" width="84" height="6" rx="3" fill="#e0deea"/></g>
+    <g><rect x="424" y="130" width="108" height="140" rx="12" fill="#f6f6f7"/><rect x="434" y="140" width="88" height="64" rx="8" fill="#e7e5ee"/><rect x="434" y="214" width="50" height="8" rx="4" fill="#c9c6d6"/><rect x="434" y="230" width="88" height="6" rx="3" fill="#e0deea"/></g>
+    <rect x="304" y="126" width="112" height="148" rx="14" fill="#7b5cf0" fill-opacity=".08" stroke="#7b5cf0" stroke-width="1.6" stroke-dasharray="5 4" class="sel"/>
+    <g><rect x="308" y="130" width="104" height="140" rx="12" fill="#fff" stroke="#e7e5ee"/><rect x="318" y="140" width="84" height="64" rx="8" fill="#ece7ff"/><rect class="grow" x="318" y="214" width="70" height="8" rx="4" fill="#14121c"/><rect x="318" y="230" width="84" height="6" rx="3" fill="#e0deea"/></g>
+    <g class="bub"><rect x="392" y="112" width="132" height="34" rx="12" fill="#14121c"/><text x="404" y="133" font-size="11" font-weight="700" fill="#fff">Заголовок крупнее</text></g>
+  </g>
+
+  <g class="st s4">
+    <circle cx="364" cy="170" r="42" fill="#ece7ff"/><circle cx="364" cy="170" r="30" fill="#7b5cf0"/>
+    <path class="tick" d="M350 171l10 10 18-20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="364" y="244" text-anchor="middle" font-size="15" font-weight="800" fill="#14121c">Передано</text>
+    <g font-size="11" font-weight="700" text-anchor="middle"><rect x="262" y="260" width="64" height="26" rx="13" fill="#f2efff"/><text x="294" y="277" fill="#5f3fd8">PNG</text><rect x="334" y="260" width="64" height="26" rx="13" fill="#f2efff"/><text x="366" y="277" fill="#5f3fd8">PDF</text><rect x="406" y="260" width="64" height="26" rx="13" fill="#f2efff"/><text x="438" y="277" fill="#5f3fd8">Figma</text></g>
+  </g>
+
+  <g class="cur c1"><use href="#aiPtr" fill="#7b5cf0" stroke="#fff" stroke-width="1.4"/><g transform="translate(14,22)"><rect x="-4" y="-11" width="48" height="22" rx="11" fill="#7b5cf0"/><text x="20" y="4" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">Вы</text></g></g>
+  <g class="cur c2"><use href="#aiPtr" fill="#14121c" stroke="#fff" stroke-width="1.4"/><g transform="translate(14,22)"><rect x="-4" y="-11" width="76" height="22" rx="11" fill="#14121c"/><text x="34" y="4" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">Дизайнер</text></g></g>
+</svg></div>
       <ol class="ai-steps">
         <li><b>Ставим задачу</b><p>Вы описываете задачу, а система помогает разобрать бриф и собрать нужную информацию.</p></li>
         <li><b>Система собирает черновик</b><p>Подключенные ИИ-инструменты готовят варианты и материалы за часы, а не за дни.</p></li>
@@ -424,9 +494,6 @@ PODD='''
 </svg>
   </div>
   <section class="sp-sec" id="как-работает">
-    <div class="video xl" role="img" aria-label="Место под демо-видео"><span>здесь будет большое демо-видео о том, как работает доска.поддержка</span></div>
-  </section>
-  <section class="sp-sec">
     <h2>как это <em>работает</em></h2>
     <p class="sub">Пять шагов от подключения до результата.</p>
     <div class="steps"><div class="step"><span>01</span>Подключаем сайт и доступы</div><div class="step"><span>02</span>Заводим личный кабинет</div><div class="step"><span>03</span>Вы оставляете заявку на правку</div><div class="step"><span>04</span>Специалист проверяет и выполняет</div><div class="step"><span>05</span>Вы получаете результат и отчет</div></div>

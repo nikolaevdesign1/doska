@@ -362,13 +362,68 @@ USLOVIYA='''
 '''
 PODD='''
 <main><div class="wrap">
-  <div class="sp-hero hero">
-    <h1>доска<em>.поддержка</em></h1>
-    <p class="sub">Сервис технической поддержки сайтов: оставляете заявку на правку, специалист проверяет и выполняет в рамках тарифа.</p>
-    <p class="rf"><span class="rf-i" aria-hidden="true">●</span> серверы находятся в Российской Федерации</p>
-    <div class="hero-cta"><button class="btn btn-accent" type="button" data-integr>оставить заявку на интеграцию</button></div>
+  <div class="hx sp-hero hero">
+    <div class="hx-in">
+      <div>
+        <span class="rf"><span class="rf-i" aria-hidden="true">●</span> правки прямо на сайте</span>
+        <h1>клиент показывает правку<em>мы вносим ее</em></h1>
+        <p class="sub">Выделил блок на странице, написал комментарий, нажал «отправить». Задача сразу попадает в работу. Без скриншотов и переписок.</p>
+        <div class="hero-cta"><button class="btn btn-accent" type="button" data-integr>подключить поддержку</button><a class="btn" href="#как-работает">как это работает</a></div>
+        <div class="hx-stats">
+          <div class="hx-st"><span>1</span><b>клик до задачи</b><p>выделили и отправили</p></div>
+          <div class="hx-st"><span>3</span><b>экрана</b><p>телефон, планшет, ПК</p></div>
+          <div class="hx-st"><span>№</span><b>спринты</b><p>с отчетом по правкам</p></div>
+        </div>
+      </div>
+      <svg class="scene" viewBox="0 0 560 450" role="img" aria-label="Команда оставляет правки на макете сайта">
+    <g filter="url(#sh)"><rect x="20" y="16" width="520" height="376" rx="18" fill="#fff"/></g>
+    <path d="M20 56H540" stroke="#e7e5ee"/>
+    <circle cx="44" cy="36" r="5" fill="#e7e5ee"/><circle cx="62" cy="36" r="5" fill="#e7e5ee"/><circle cx="80" cy="36" r="5" fill="#e7e5ee"/>
+    <rect x="150" y="25" width="260" height="22" rx="11" fill="#f2f1f6"/><text x="280" y="40.5" text-anchor="middle" font-size="11" font-weight="600" fill="#8a8794">yoursite.ru/support</text>
+
+    <rect x="44" y="76" width="64" height="10" rx="5" fill="#14121c"/>
+    <rect x="360" y="76" width="30" height="8" rx="4" fill="#e7e5ee"/><rect x="402" y="76" width="30" height="8" rx="4" fill="#e7e5ee"/><rect x="444" y="76" width="52" height="14" rx="7" fill="#14121c"/>
+    <rect x="44" y="124" width="250" height="18" rx="9" fill="#14121c"/>
+    <rect x="44" y="152" width="190" height="18" rx="9" fill="#14121c"/>
+    <rect x="44" y="184" width="210" height="8" rx="4" fill="#e7e5ee"/><rect x="44" y="200" width="160" height="8" rx="4" fill="#e7e5ee"/>
+    <rect x="44" y="226" width="96" height="30" rx="15" fill="#7b5cf0"/>
+    <rect x="330" y="104" width="186" height="152" rx="16" fill="#ece7ff"/>
+    <circle cx="423" cy="176" r="34" fill="#cfc2ff"/><path d="M398 256Q398 214 423 214Q448 214 448 256Z" fill="#7b5cf0"/>
+    <rect x="44" y="282" width="140" height="72" rx="12" fill="#f6f6f7"/><rect x="198" y="282" width="140" height="72" rx="12" fill="#f6f6f7"/><rect x="352" y="282" width="164" height="72" rx="12" fill="#f6f6f7"/>
+
+    <g class="a-region"><rect x="38" y="116" width="268" height="64" rx="10" fill="#7b5cf0" fill-opacity=".1" stroke="#7b5cf0" stroke-width="1.6" stroke-dasharray="5 4"/></g>
+    <g class="a-bubble" filter="url(#sh2)">
+      <rect x="150" y="196" width="196" height="62" rx="14" fill="#fff"/>
+      <g transform="translate(174,222)"><use href="#avA"/></g>
+      <text x="198" y="217" font-size="11" font-weight="800" fill="#14121c">Анна</text>
+      <text x="198" y="233" font-size="11" font-weight="600" fill="#5b5868">Заголовок крупнее,</text>
+      <text x="198" y="247" font-size="11" font-weight="600" fill="#5b5868">кнопку сдвинуть вправо</text>
+    </g>
+    <g class="a-pin" transform="translate(438,262)"><g filter="url(#sh2)"><path d="M0 0 C-14 -6 -16 -26 0 -28 C16 -26 14 -6 0 0Z" fill="#7b5cf0" transform="scale(1.1)"/></g><text x="0" y="-17" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">2</text></g>
+
+    <g filter="url(#sh2)"><rect x="104" y="368" width="352" height="52" rx="26" fill="#14121c"/></g>
+    <g font-size="12" font-weight="700" fill="#fff"><text x="132" y="399">Область</text><text x="198" y="399" fill="#bdb8cc">Метка</text><text x="252" y="399" fill="#bdb8cc">Элемент</text></g>
+    <g class="a-btn"><rect x="336" y="376" width="112" height="36" rx="18" fill="#7b5cf0"/><text x="392" y="399" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Отправить · 3</text></g>
+    <g class="a-done" filter="url(#sh2)"><rect x="318" y="322" width="190" height="34" rx="17" fill="#fff"/><circle cx="338" cy="339" r="9" fill="#7b5cf0"/><path d="M333.6 339.2l3.2 3.2 5.6-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="354" y="343" font-size="12" font-weight="800" fill="#14121c">Спринт №3 отправлен</text></g>
+
+    <g class="cur a-lena"><use href="#ptr" fill="#b9a6ff" stroke="#fff" stroke-width="1.4"/><g transform="translate(16,24)"><rect x="-4" y="-12" width="62" height="24" rx="12" fill="#ece7ff" stroke="#cfc2ff"/><g transform="translate(8,0) scale(.62)"><use href="#avC"/></g><text x="22" y="4" font-size="11" font-weight="700" fill="#5f3fd8">Лена</text></g></g>
+    <g class="cur a-max"><use href="#ptr" fill="#14121c" stroke="#fff" stroke-width="1.4"/><g transform="translate(16,24)"><rect x="-4" y="-12" width="60" height="24" rx="12" fill="#14121c"/><g transform="translate(8,0) scale(.62)"><use href="#avD"/></g><text x="22" y="4" font-size="11" font-weight="700" fill="#fff">Макс</text></g></g>
+    <g class="cur a-anna"><use href="#ptr" fill="#7b5cf0" stroke="#fff" stroke-width="1.4"/><g transform="translate(16,24)"><rect x="-4" y="-12" width="64" height="24" rx="12" fill="#7b5cf0"/><g transform="translate(8,0) scale(.62)"><use href="#avA"/></g><text x="22" y="4" font-size="11" font-weight="700" fill="#fff">Анна</text></g></g>
+  </svg>
+    </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="avc"><circle r="16"/></clipPath>
+    <g id="avA"><g clip-path="url(#avc)"><circle r="16" fill="#ece7ff"/><path d="M-14 18Q-14 5 0 5Q14 5 14 18Z" fill="#14121c"/><circle cy="-3" r="6.4" fill="#f1c7a3"/><path d="M-7 -5Q-6 -11 0 -11Q7 -11 7 -4Q3 -8 -7 -5Z" fill="#3b2a20"/></g></g>
+    <g id="avC"><g clip-path="url(#avc)"><circle r="16" fill="#e1d9ff"/><path d="M-14 18Q-14 5 0 5Q14 5 14 18Z" fill="#fff"/><circle cy="-3" r="6.4" fill="#f6d2b4"/><path d="M-8 0Q-9 -12 0 -12Q9 -12 8 0Q8 -6 0 -7Q-8 -6 -8 0Z" fill="#b5542c"/></g></g>
+    <g id="avD"><g clip-path="url(#avc)"><circle r="16" fill="#cfc2ff"/><path d="M-14 18Q-14 5 0 5Q14 5 14 18Z" fill="#14121c"/><circle cy="-3" r="6.4" fill="#d9a07a"/><path d="M-6.5 -5Q-5 -10 0 -10Q6 -10 6.5 -5Q0 -7.5 -6.5 -5Z" fill="#14121c"/></g></g>
+    <path id="ptr" d="M0 0 L0 17 L4.6 13 L7.6 20.2 L10.4 19 L7.4 12 L13.4 12 Z"/>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#281e5a" flood-opacity=".14"/></filter>
+    <filter id="sh2" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#281e5a" flood-opacity=".16"/></filter>
+  </defs>
+</svg>
   </div>
-  <section class="sp-sec">
+  <section class="sp-sec" id="как-работает">
     <div class="video xl" role="img" aria-label="Место под демо-видео"><span>здесь будет большое демо-видео о том, как работает доска.поддержка</span></div>
   </section>
   <section class="sp-sec">
